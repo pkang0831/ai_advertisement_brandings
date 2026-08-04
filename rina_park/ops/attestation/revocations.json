@@ -1,0 +1,6 @@
+{
+  "revoked_attestation_ids": [],
+  "revoked_key_ids": [],
+  "revoked_nonces": [],
+  "schema_version": 1
+}

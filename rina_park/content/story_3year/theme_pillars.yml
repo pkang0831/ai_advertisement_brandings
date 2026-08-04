@@ -1,0 +1,180 @@
+# 콘텐츠 필라 — 프롬프트 톤 + 권장 하이퍼파라미터 (SFW IG 기본)
+# identity_fixed: trigger + visual DNA는 공통, scene만 필라별로 바뀜.
+
+meta:
+  trigger: rina_park_person
+  identity_block: >-
+    rina_park_person, fictional adult Korean-Canadian woman age 27,
+    fair natural skin texture visible pores, long dark hair, soft glam makeup,
+    relaxed closed mouth, candid smartphone lifestyle photo,
+    looking away from camera, engaged with activity, gaze off-camera, slight film grain
+  # Default gaze: candid / off-camera for IG + most home NSFW. Selfie rare optional (Week1 OFF).
+  gaze_rule:
+    default: looking_away_candid
+    positive: >-
+      looking away from camera, candid, engaged with activity, gaze off-camera
+    negative: >-
+      looking at camera, eye contact with camera, staring at viewer, selfie pose
+    selfie_beats: rare_optional_default_off
+  hands_feet_rule:
+    default: hide_via_composition
+    hands_hero_default: false
+    week01_hands_hero: false
+    positive: >-
+      hands in pockets or holding cup or bag, hands cropped out of frame,
+      soft out-of-focus hands, feet out of frame or obscured
+    negative: >-
+      extra fingers, deformed hands, bad anatomy hands, bad anatomy feet,
+      bare feet close-up, detailed hands in foreground
+    hand_detailer_default: false
+    note: >-
+      Prefer composition over ADetailer/inpaint for hands/feet.
+      Hand refine only when hands_hero: true (rare). FaceDetailer face stays ON.
+  # Soft preference — applied on Week1 eyes regen + onward.
+  eyes_soft_preference:
+    code: eyes_slightly_larger_preferred
+    positive: >-
+      slightly larger eyes, subtle doe eyes, soft open eyes, photoreal
+    negative: >-
+      small eyes, squinting, beady eyes, anime eyes, exaggerated eyes, oversized eyes
+    note: Gentle photoreal bias — NOT anime, NOT exaggerated.
+  default_hyperparams:
+    lora_scale: 0.90
+    steps: 36
+    cfg: 4.2
+    size: "832x1216"
+    framing: environmental_medium_wide
+    hands_hero: false
+  platform_negative: >-
+    underage, teen, babyface, nude, explicit, nipples, genitals,
+    bad hands, extra fingers, deformed hands, bad anatomy hands, bad anatomy feet,
+    bare feet close-up, detailed hands in foreground,
+    distorted face, plastic skin, beauty filter, studio lighting,
+    model pose, watermark, text, oversmooth skin, extreme telephoto beauty compression,
+    looking at camera, eye contact with camera, staring at viewer, selfie pose,
+    small eyes, squinting, beady eyes, anime eyes, exaggerated eyes
+  hard_angle_policy: optional_rare_identity_risk
+  gaze_policy: looking_away_candid_default
+  hands_feet_policy: hide_via_composition_default
+  eyes_policy: slightly_larger_doe_photoreal_soft
+
+pillars:
+  fitness:
+    label_ko: 피트니스 / 헬스
+    prompt_tone: >-
+      effort-forward but not gym-bro; sweat optional; equipment as story props;
+      athletic wear ordinary (leggings, sports bra covered by tank OK, one-piece swim);
+      narrative: arrive → work → leave, not flex catalog;
+      gaze away from camera / engaged with equipment (selfie rare optional only)
+    suggested_hyperparams:
+      lora_scale: 0.90
+      steps: 36
+      cfg: 4.0
+      framing: three_quarter_or_full_env
+      notes: "기본은 카메라 비응시; 거울 selfie는 rare optional·Week1 OFF; 뒤통수 각도 기본 제외"
+    scene_types: [gym_arrival, strength_session, pilates_studio, outdoor_run, gentle_yoga_home]
+    ig_ok: true
+    home_mature_ok: false
+
+  food:
+    label_ko: 식사 / 뉴트리션 (비처방)
+    prompt_tone: >-
+      appetizing but casual; plate + environment hero; hands holding cup/fork soft
+      or cropped (not finger close-up); no calorie claims;
+      post-workout fuel, meal prep, market finds; Rina secondary if food-hero shot
+    suggested_hyperparams:
+      lora_scale: 0.88
+      steps: 32
+      cfg: 4.0
+      framing: tabletop_with_partial_subject_or_over_shoulder
+    scene_types: [protein_lunch, meal_prep_detail, sunday_meal_prep, market_brunch]
+    ig_ok: true
+    home_mature_ok: false
+
+  cafe:
+    label_ko: 카페 / 집중 타임
+    prompt_tone: >-
+      soft window light, laptop or book, iced/hot drink, imperfect crop;
+      cozy productivity; Toronto-ish interiors without naming real chains as endorsement
+    suggested_hyperparams:
+      lora_scale: 0.90
+      steps: 34
+      cfg: 4.2
+      framing: medium_wide_booth_or_window
+    scene_types: [cafe_morning, cafe_laptop, iced_drink_window, friday_treat_cafe]
+    ig_ok: true
+    home_mature_ok: false
+
+  errands:
+    label_ko: 심부름 / 동네 생활
+    prompt_tone: >-
+      tote bag, grocery, pharmacy bag, sidewalk motion; lived-in city texture;
+      never live check-in; memory caption tone
+    suggested_hyperparams:
+      lora_scale: 0.90
+      steps: 32
+      cfg: 4.0
+      framing: walking_env_full_or_3q
+    scene_types: [grocery_run, pharmacy_errand]
+    ig_ok: true
+    home_mature_ok: false
+
+  selfcare:
+    label_ko: 자케어 / 회복 (SFW)
+    prompt_tone: >-
+      skincare vanity, stretch, foam roll, slow morning robe/hoodie covered;
+      calm intimacy without lingerie; platform-safe loungewear only
+    suggested_hyperparams:
+      lora_scale: 0.90
+      steps: 36
+      cfg: 4.2
+      framing: medium_home_env
+    scene_types: [skincare_vanity, foam_roll, slow_morning_home_sfw, wind_down_sfw]
+    ig_ok: true
+    home_mature_ok: false
+
+  friends_fictional:
+    label_ko: 허구 친구 / 소셜
+    prompt_tone: >-
+      second person blurred or cropped out of face; group energy via table/gestures;
+      names Maya / Jordan only in copy if needed; no real likeness
+    suggested_hyperparams:
+      lora_scale: 0.90
+      steps: 34
+      cfg: 4.0
+      framing: wide_social_env_rina_primary
+    scene_types: [dinner_with_friend_blurred, sunset_with_friend_env, group_toast_env]
+    ig_ok: true
+    home_mature_ok: false
+
+  weekend_outdoors:
+    label_ko: 주말 야외
+    prompt_tone: >-
+      parks, trails, waterfront vibe, golden hour; layered seasonal wardrobe;
+      story over pose; wind in hair OK; hard back-of-head rare optional only
+    suggested_hyperparams:
+      lora_scale: 0.90
+      steps: 36
+      cfg: 4.0
+      framing: full_body_landscape_env
+    scene_types: [park_picnic, trail_hike, waterfront_walk, golden_hour_city]
+    ig_ok: true
+    home_mature_ok: false
+
+  travel_season:
+    label_ko: 여행 시즌 (연 아크 Q3 가중)
+    prompt_tone: >-
+      suitcase edge, hotel gym, window seat vibe, passport prop fictional;
+      same morning routine elsewhere; no real hotel brand claims
+    suggested_hyperparams:
+      lora_scale: 0.90
+      steps: 36
+      cfg: 4.2
+      framing: environmental_travel
+    scene_types: [hotel_gym, suitcase_morning, scenic_overlook]
+    ig_ok: true
+    home_mature_ok: false
+
+  # --- LOCAL ONLY pillar (never IG/Patreon) ---
+  # Full pillar definition: private/content/theme_pillars_home_mature.yml
+  # Soft-merge via content.story_3year.load_overlays.load_theme_pillars().

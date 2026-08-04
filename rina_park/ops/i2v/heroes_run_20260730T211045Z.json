@@ -1,0 +1,65 @@
+{
+  "run_id": "20260730T211045Z",
+  "elapsed_sec": 564.6,
+  "gen_res": [
+    832,
+    1216
+  ],
+  "i2v_res": [
+    1080,
+    1920
+  ],
+  "width": 832,
+  "height": 1216,
+  "skip_face_detailer": false,
+  "upscale": true,
+  "poses": [
+    "hand_pockets_3q",
+    "hand_cropped_out"
+  ],
+  "seeds_per_pose": 2,
+  "auto_pass_count": 1,
+  "total": 4,
+  "items": [
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T211045Z/hand_pockets_3q/s00_seed30072026.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T211045Z/hand_pockets_3q/s00_seed30072026_gen832x1216.jpg",
+      "seed": 30072026,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 56,
+      "identity": true,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "seed": 30072123,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "seed": 30073026,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "seed": 30073123,
+      "error": "RuntimeError: black frame mean=0.0"
+    }
+  ],
+  "output_dir": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T211045Z",
+  "still_gate": "/Users/RBIPK031/ai_influencer/rina_park/ops/i2v/STILL_GATE.md",
+  "note": "auto_pass \u2260 promote; human QC required before current/",
+  "promote_hint": "PYTHONPATH=rina_park .venv/bin/python rina_park/scripts/promote_i2v_heroes.py --run-id 20260730T211045Z --pick pose_id:sXX"
+}

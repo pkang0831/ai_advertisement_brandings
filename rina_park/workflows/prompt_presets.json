@@ -1,0 +1,113 @@
+{
+  "character": "Rina Park",
+  "metadata_label": "devenira_rina_park",
+  "identity_note": "Metadata only until a commercially approved identity adapter or self-trained LoRA passes the 12-scene gate.",
+  "base_positive_prefix": "fictional adult Korean-Canadian woman age 27, natural facial detail, relaxed lips, closed mouth, candid lifestyle photo, smartphone photo, natural skin texture",
+  "base_negative": "underage, teen, babyface, nude, explicit, nipples, genitals, bad hands, distorted face, plastic skin, beauty filter, studio lighting, model pose, watermark, text, AI face, oversmooth skin, perfect symmetry, tight close-up, face filling frame, chest filling frame, centered ID photo",
+  "composition_rules": {
+    "default_framing": "environmental medium-wide, three-quarter body, or full body",
+    "subject_frame_share": "30-55%",
+    "lens": "28-50mm smartphone perspective",
+    "mystery_devices": [
+      "over-shoulder glance",
+      "walking away",
+      "reflection",
+      "doorway framing",
+      "foreground occlusion",
+      "towel edge",
+      "pool rail",
+      "steam",
+      "waterline"
+    ],
+    "avoid": "tight face/chest crops, centered poses, maximum exposure, resolved story"
+  },
+  "settings": {
+    "width": 832,
+    "height": 1216,
+    "steps_lightning": 8,
+    "steps_full": 32,
+    "cfg": 4.5,
+    "sampler": "dpmpp_sde_gpu",
+    "scheduler": "karras"
+  },
+  "tracks": {
+    "ig": {
+      "tier": null,
+      "outfit_examples": [
+        "navy athletic one-piece swimsuit",
+        "patterned cross-back one-piece, swim cap",
+        "black minimalist one-piece",
+        "ribbed mini dress, small backpack"
+      ],
+      "locations": [
+        "busy public indoor pool, lane lines, other swimmers blurred",
+        "outdoor pool ladder exit, daylight",
+        "grassy park hill, golden hour city skyline distant"
+      ],
+      "shot_examples": [
+        "distant friend-taken three-quarter body, slight imperfect crop",
+        "full-body back view exiting pool, rail partially occluding body",
+        "walking away then over-shoulder glance, candid",
+        "reflection in locker mirror with foreground doorway"
+      ],
+      "phone_real_notes": "flat facility light OR golden hour; background clutter OK; no ring light"
+    },
+    "patreon_a": {
+      "tier": "a",
+      "policy": "Safe for All Audiences",
+      "outfit_examples": [
+        "oversized hoodie and shorts at home",
+        "cotton cami and lounge pants, morning",
+        "post-swim coverup in locker hallway"
+      ],
+      "locations": [
+        "apartment bathroom mirror soft daylight",
+        "bedroom morning window light",
+        "locker hallway covered"
+      ],
+      "shot_examples": [
+        "environmental mirror selfie, covered, phone partially hiding expression",
+        "candid morning routine three-quarter body through doorway"
+      ],
+      "phone_real_notes": "private but non-explicit; available light"
+    },
+    "patreon_b": {
+      "tier": "b",
+      "policy": "Safe for All Audiences; value comes from alternate edits and production notes, not exposure",
+      "outfit_examples": [
+        "navy athletic one-piece swimsuit with a loose coverup",
+        "long-sleeve fitted swim top and high-waisted swim shorts",
+        "iridescent athletic one-piece with a towel over shoulders"
+      ],
+      "locations": [
+        "evening public pool with lane lights",
+        "covered transition hallway outside the pool area",
+        "home desk with swim journal and alternate contact sheet"
+      ],
+      "shot_examples": [
+        "three-quarter body from across the pool with towel edge in foreground",
+        "covered mirror selfie with phone partially covering expression",
+        "alternate editorial crop showing the environment and swim routine"
+      ],
+      "phone_real_notes": "SFW alternate editorial edit; no adult-only wardrobe, suggestive styling, seductive pose, or body-part framing"
+    },
+    "patreon_c": {
+      "tier": "c",
+      "policy": "Safe for All Audiences; value comes from archive depth and long production notes",
+      "outfit_examples": [
+        "athletic one-piece swimsuit with cardigan and swim bag",
+        "oversized hoodie and lounge pants",
+        "casual city dress with light jacket"
+      ],
+      "locations": [
+        "home studio archive desk in warm available light",
+        "living room with season contact sheets"
+      ],
+      "shot_examples": [
+        "medium-wide behind-the-scenes framing through doorway",
+        "reflection with production notes and unresolved story detail"
+      ],
+      "phone_real_notes": "SFW archive edit; never relax shared negatives; no adult-only wardrobe, seductive framing, or sexual-service language"
+    }
+  }
+}

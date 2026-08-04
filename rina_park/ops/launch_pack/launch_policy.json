@@ -1,0 +1,49 @@
+{
+  "draft_placeholder_disclosure": "Rina is a fictional virtual character. Visuals are AI-generated.",
+  "disclosure_candidate_ids": [
+    "disclosure_a",
+    "disclosure_b",
+    "disclosure_c"
+  ],
+  "bio_headings": [
+    "Bio A",
+    "Bio B",
+    "Bio C"
+  ],
+  "pinned_post_headings": [
+    "Pinned post 1 — Meet Rina",
+    "Pinned post 2 — The routine",
+    "Pinned post 3 — AI disclosure"
+  ],
+  "patreon_disclosure_headings": [
+    "Public About",
+    "Safe for All Audiences disclosure",
+    "Poolside Notes welcome",
+    "Extended Cut welcome",
+    "Season Archive welcome",
+    "Public preview",
+    "Member CTA",
+    "Billing, refunds, and expectations"
+  ],
+  "tiers": {
+    "Poolside Notes": "$3/month draft",
+    "Extended Cut": "$8/month draft",
+    "Season Archive": "$15/month draft"
+  },
+  "proof_posts": {
+    "ig_20260810_carousel": "Toronto, Ontario",
+    "patreon_20260811_a": "None — no location label in the source calendar.",
+    "ig_20260812_reel": "Downtown Toronto",
+    "patreon_20260813_b": "None — no location label in the source calendar.",
+    "ig_20260814_carousel": "Greater Toronto Area",
+    "patreon_20260815_c": "None — no location label in the source calendar.",
+    "ig_20260816_reel": "Toronto, Ontario",
+    "ig_20260817_carousel": "Toronto, Ontario",
+    "patreon_20260818_a": "None — no location label in the source calendar.",
+    "ig_20260819_reel": "Downtown Toronto",
+    "patreon_20260820_b": "None — no location label in the source calendar.",
+    "ig_20260821_carousel": "Greater Toronto Area",
+    "patreon_20260822_c": "None — no location label in the source calendar.",
+    "ig_20260823_reel": "Toronto, Ontario"
+  }
+}

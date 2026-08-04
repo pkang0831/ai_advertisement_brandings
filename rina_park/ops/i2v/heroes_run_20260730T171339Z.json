@@ -1,0 +1,73 @@
+{
+  "run_id": "20260730T171339Z",
+  "elapsed_sec": 65.7,
+  "gen_res": [
+    832,
+    1216
+  ],
+  "i2v_res": [
+    1080,
+    1920
+  ],
+  "width": 832,
+  "height": 1216,
+  "skip_face_detailer": true,
+  "upscale": true,
+  "poses": [
+    "hand_resting_lap_seated"
+  ],
+  "seeds_per_pose": 2,
+  "auto_pass_count": 1,
+  "total": 2,
+  "items": [
+    {
+      "pose_id": "hand_resting_lap_seated",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T171339Z/hand_resting_lap_seated/s00_seed30082026.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T171339Z/hand_resting_lap_seated/s00_seed30082026_gen832x1216.jpg",
+      "seed": 30082026,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 51,
+      "identity": true,
+      "hands": true,
+      "hand_count": 2,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_resting_lap_seated",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T171339Z/hand_resting_lap_seated/s01_seed30082123.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T171339Z/hand_resting_lap_seated/s01_seed30082123_gen832x1216.jpg",
+      "seed": 30082123,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 51,
+      "identity": true,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": [
+        "hand_count_1_!=_expected_2",
+        "hands_only_in_upper_face_band"
+      ]
+    }
+  ],
+  "output_dir": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T171339Z",
+  "still_gate": "/Users/RBIPK031/ai_influencer/rina_park/ops/i2v/STILL_GATE.md",
+  "note": "auto_pass \u2260 promote; human QC required before current/",
+  "promote_hint": "PYTHONPATH=rina_park .venv/bin/python rina_park/scripts/promote_i2v_heroes.py --run-id 20260730T171339Z --pick pose_id:sXX"
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Private adult-only non-Rina SeedVR2 calibration; never identity conditioning, approval, publication, or redistribution.",
+  "corpus_size": 3,
+  "adult_policy": {
+    "rule": "Include only source pages whose supplied caption explicitly says adult.",
+    "age_inference_performed": false,
+    "minors_allowed": false,
+    "celebrity_or_real_name_inference_performed": false
+  },
+  "moodboard_policy": {
+    "used": false,
+    "reason": "The local moodboard manifest does not explicitly establish that every depicted person is an adult. No age was inferred and no moodboard file was copied or exposed."
+  },
+  "license": {
+    "name": "Pexels License",
+    "url": "https://www.pexels.com/license/",
+    "local_evaluation_and_modification_allowed": true,
+    "restrictions_acknowledged": [
+      "Do not sell unaltered copies.",
+      "Do not imply endorsement.",
+      "Do not redistribute as a competing stock service."
+    ]
+  },
+  "assets": [
+    {
+      "id": "C01",
+      "path": "corpus/C01_adult_woman_bw.jpg",
+      "sha256": "a33111309e8744f5d4c551cd713ce52340f376a4195b2027229ab00ff45e73bd",
+      "size_bytes": 35710,
+      "dimensions": [768, 549],
+      "source_page": "https://www.pexels.com/photo/elegant-black-and-white-portrait-of-a-woman-33680696/",
+      "download_url": "https://images.pexels.com/photos/33680696/pexels-photo-33680696.jpeg?auto=compress&cs=tinysrgb&w=768",
+      "source_caption_evidence": "Black and white portrait of an adult woman with a calm and thoughtful expression.",
+      "face_count_preflight": 1,
+      "identity": "anonymous_for_calibration; no name lookup performed"
+    },
+    {
+      "id": "C02",
+      "path": "corpus/C02_adult_woman_close.jpg",
+      "sha256": "7afef36afbeee733cba7431482fa0f8d473958e1ebbeac96770b73a9ca95796d",
+      "size_bytes": 82916,
+      "dimensions": [768, 1152],
+      "source_page": "https://www.pexels.com/photo/close-up-portrait-of-a-woman-7886210/",
+      "download_url": "https://images.pexels.com/photos/7886210/pexels-photo-7886210.jpeg?auto=compress&cs=tinysrgb&w=768",
+      "source_caption_evidence": "Intimate close-up portrait of an adult woman, capturing deep emotions and expression.",
+      "face_count_preflight": 1,
+      "identity": "anonymous_for_calibration; no name lookup performed"
+    },
+    {
+      "id": "C03",
+      "path": "corpus/C03_adult_man_studio.jpg",
+      "sha256": "841c8bf66d2daa30976822488d432de424f3e426adb6ef012eafbd8f7768f7c9",
+      "size_bytes": 39091,
+      "dimensions": [768, 1152],
+      "source_page": "https://www.pexels.com/photo/dark-portrait-of-an-adult-man-with-a-stubble-19676498/",
+      "download_url": "https://images.pexels.com/photos/19676498/pexels-photo-19676498.jpeg?auto=compress&cs=tinysrgb&w=768",
+      "source_caption_evidence": "Dramatic studio portrait of an adult man with sharp shadows highlighting his features.",
+      "face_count_preflight": 1,
+      "identity": "anonymous_for_calibration; no name lookup performed"
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "schema_version": "1.1.0",
+  "experiment_id": "rina-hyperreal-foundation-phase0-qwen-z-v1",
+  "purpose": "Model-neutral foundation realism comparison without identity conditioning",
+  "models": [
+    "qwen_image_2512",
+    "z_image"
+  ],
+  "generic_subject": "an adult Korean-Canadian woman who is a recreational swimmer, with a natural athletic build and ordinary unretouched appearance",
+  "identity_policy": {
+    "identity_conditioning_allowed": false,
+    "identity_tokens_allowed": false,
+    "named_character_allowed": false,
+    "same_generic_subject_for_every_prompt": true
+  },
+  "output": {
+    "width": 896,
+    "height": 1152,
+    "format": "png",
+    "planned_slots": 12,
+    "publication_allowed": false
+  },
+  "seed_policy": {
+    "algorithm": "base_plus_prompt_index",
+    "base_seed": 26072600,
+    "pairing": "Both models receive the identical seed for a camera hypothesis.",
+    "mapping_randomization_seed": 771903
+  },
+  "moodboard_policy": {
+    "references_reviewed": [
+      "ref_01.png",
+      "ref_02.png",
+      "ref_03.png",
+      "ref_04.png",
+      "ref_05.png",
+      "ref_06.png",
+      "ref_07.png",
+      "ref_08.png",
+      "ref_09.png"
+    ],
+    "allowed_abstraction": [
+      "camera geometry",
+      "subject occupancy",
+      "horizon and perspective",
+      "light direction and contrast",
+      "environment category and clutter density",
+      "action rhythm"
+    ],
+    "forbidden_transfer": [
+      "face or identity",
+      "body identity",
+      "exact pose coordinates",
+      "exact wardrobe",
+      "exact architecture",
+      "text, UI, logos, or watermarks",
+      "source pixels"
+    ]
+  },
+  "camera_hypotheses": [
+    {
+      "id": "H01",
+      "name": "indoor_public_pool_candid",
+      "abstracted_from": ["ref_01.png", "ref_02.png", "ref_03.png"],
+      "camera_type": "recent consumer smartphone main camera, handheld",
+      "equivalent_focal_length_mm": 26,
+      "camera_height_m": 1.45,
+      "camera_distance_m": 3.1,
+      "orientation": "vertical",
+      "subject_bbox_xywh_normalized": [0.35, 0.17, 0.38, 0.70],
+      "subject_occupancy_percent": 37,
+      "action": "pausing beside a lane after a swim while loosely holding goggles",
+      "gaze_expression": "looking just past the camera toward a friend, relaxed post-exertion half-smile",
+      "lighting": {
+        "key": "large side windows, cool daylight from camera right",
+        "fill": "soft cyan bounce from pool water below",
+        "environment": "uneven overhead municipal fixtures with mild highlight clipping"
+      },
+      "material_state": "damp hair and swimsuit, wet deck patches, dry towel on a bench",
+      "background_graph": {
+        "near": ["stainless ladder", "deck drain", "rumpled towel"],
+        "mid": ["lane rope", "two indistinct swimmers"],
+        "far": ["roof trusses", "windows", "timing clock without legible text"]
+      },
+      "wardrobe_sfw": "opaque dark navy athletic one-piece swimsuit",
+      "deliberate_imperfections": ["slight handheld roll", "mixed white balance", "one clipped window patch", "damp flyaway hair", "minor phone noise"],
+      "prompt": "Photograph an adult Korean-Canadian woman who is a recreational swimmer, with a natural athletic build and ordinary unretouched appearance, pausing beside a lane after a swim and loosely holding goggles in an everyday municipal indoor pool. Vertical handheld consumer-phone photograph, 26 mm equivalent, camera 1.45 m high at 3.1 m, subject about 37% of frame. She looks just past the camera toward a friend with a relaxed post-exertion half-smile. Cool window key from camera right, cyan water bounce, uneven overhead fixtures. Opaque dark navy athletic one-piece, damp hair and fabric, wet deck patches, dry rumpled towel. Include a ladder and drain nearby, lanes and indistinct swimmers mid-distance, roof trusses and windows far back. Slight roll, mixed white balance, one clipped window patch, flyaways and minor phone noise; candid, physically coherent, no text or watermark."
+    },
+    {
+      "id": "H02",
+      "name": "outdoor_pool_transition",
+      "abstracted_from": ["ref_02.png", "ref_03.png", "ref_04.png"],
+      "camera_type": "weather-sealed compact camera, handheld burst",
+      "equivalent_focal_length_mm": 35,
+      "camera_height_m": 1.15,
+      "camera_distance_m": 4.0,
+      "orientation": "vertical",
+      "subject_bbox_xywh_normalized": [0.28, 0.12, 0.43, 0.79],
+      "subject_occupancy_percent": 42,
+      "action": "stepping up from an outdoor pool ladder and reaching for a towel",
+      "gaze_expression": "downward gaze checking footing, neutral concentrated expression",
+      "lighting": {
+        "key": "late-afternoon sun filtered by a cloud from back-left",
+        "fill": "open-sky blue fill from front-right",
+        "environment": "water caustics and subdued deck reflections"
+      },
+      "material_state": "streaming wet hair and suit, wet metal ladder, partly dry textured towel",
+      "background_graph": {
+        "near": ["ladder rails", "water droplets", "folded towel edge"],
+        "mid": ["pool coping", "changed lane markers", "empty deck chair"],
+        "far": ["hedge", "low changing pavilion", "clouded sky"]
+      },
+      "wardrobe_sfw": "opaque deep green cross-back athletic one-piece swimsuit",
+      "deliberate_imperfections": ["one foot partly occluded by ladder", "subtle motion blur on reaching hand", "slightly cool auto white balance", "unposed shoulder tension"],
+      "prompt": "Photograph an adult Korean-Canadian woman who is a recreational swimmer, with a natural athletic build and ordinary unretouched appearance, stepping up an outdoor pool ladder and reaching for a towel while carefully checking her footing. Vertical handheld compact-camera burst, 35 mm equivalent, camera 1.15 m high at 4 m, subject about 42% of frame. Late-afternoon cloud-filtered sun from back-left, open-sky fill from front-right, coherent water caustics. Opaque deep green cross-back athletic one-piece; streaming wet hair and fabric, wet ladder, partly dry textured towel. Ladder and droplets near, coping, changed lane markers and an empty chair mid-ground, hedge and low pavilion far back. Let the ladder partly occlude one foot, use subtle motion blur on the reaching hand, slightly cool auto white balance and natural shoulder tension; no text or watermark."
+    },
+    {
+      "id": "H03",
+      "name": "private_covered_poolside_note",
+      "abstracted_from": ["ref_02.png", "ref_06.png", "ref_08.png"],
+      "camera_type": "small mirrorless camera with standard prime",
+      "equivalent_focal_length_mm": 50,
+      "camera_height_m": 1.05,
+      "camera_distance_m": 3.8,
+      "orientation": "vertical",
+      "subject_bbox_xywh_normalized": [0.40, 0.24, 0.34, 0.58],
+      "subject_occupancy_percent": 31,
+      "action": "seated sideways under a covered pool terrace, writing a short note in a blank notebook",
+      "gaze_expression": "eyes down at the page, thoughtful and calm",
+      "lighting": {
+        "key": "soft overcast daylight entering from open pool side",
+        "fill": "warm weak ceiling practical",
+        "environment": "muted turquoise water reflection along shadow edges"
+      },
+      "material_state": "mostly dry linen cover shirt, slightly damp hair ends, damp swimsuit beneath, dry paper",
+      "background_graph": {
+        "near": ["blank notebook", "uncapped pen", "creased towel"],
+        "mid": ["covered terrace column", "pool edge", "small side table"],
+        "far": ["soft lane reflections", "closed service door", "potted plant"]
+      },
+      "wardrobe_sfw": "opaque loose cream short-sleeve linen pool shirt over a dark athletic one-piece",
+      "deliberate_imperfections": ["creased shirt hem", "slightly crooked framing", "pen not perfectly parallel to notebook", "subtle focus falloff", "ordinary shadow noise"],
+      "prompt": "Photograph an adult Korean-Canadian woman who is a recreational swimmer, with a natural athletic build and ordinary unretouched appearance, seated sideways under a covered pool terrace writing a short note in a completely blank notebook. Vertical small-mirrorless photograph, 50 mm equivalent, camera 1.05 m high at 3.8 m, subject about 31% of frame. Eyes down, thoughtful and calm. Soft overcast pool-side key, weak warm ceiling fill, muted turquoise water reflection. Opaque loose cream short-sleeve linen pool shirt over a dark athletic one-piece; mostly dry wrinkled linen, slightly damp hair ends, dry paper. Blank notebook, pen and creased towel near; changed column, pool edge and side table mid-ground; soft lanes, service door and plant far back. Slightly crooked framing, imperfect prop alignment, gentle focus falloff and ordinary shadow noise; SFW, candid, no legible text or watermark."
+    },
+    {
+      "id": "H04",
+      "name": "motion_walking_scene",
+      "abstracted_from": ["ref_01.png", "ref_04.png", "ref_05.png"],
+      "camera_type": "consumer smartphone tele camera, handheld while walking",
+      "equivalent_focal_length_mm": 48,
+      "camera_height_m": 1.55,
+      "camera_distance_m": 5.5,
+      "orientation": "vertical",
+      "subject_bbox_xywh_normalized": [0.24, 0.16, 0.39, 0.72],
+      "subject_occupancy_percent": 34,
+      "action": "walking away from the pool building with a swim bag and turning briefly toward a companion",
+      "gaze_expression": "off-axis glance toward companion, small spontaneous smile",
+      "lighting": {
+        "key": "low side sun broken by trees",
+        "fill": "open shade from pavement and sky",
+        "environment": "alternating warm sun patches and cool shade"
+      },
+      "material_state": "dry casual layers, damp hair tied loosely, worn canvas bag, dry path",
+      "background_graph": {
+        "near": ["blurred railing edge", "fallen leaves"],
+        "mid": ["walking subject", "bicycle rack", "pool-building exit"],
+        "far": ["trees", "park path", "two indistinct pedestrians"]
+      },
+      "wardrobe_sfw": "opaque slate athletic T-shirt, relaxed black track pants, practical sneakers",
+      "deliberate_imperfections": ["motion-soft trailing foot", "foreground rail occlusion", "auto-exposure transition", "wind-displaced hair strands", "slightly late framing"],
+      "prompt": "Photograph an adult Korean-Canadian woman who is a recreational swimmer, with a natural athletic build and ordinary unretouched appearance, walking away from a pool building with a worn canvas swim bag and briefly turning toward a companion with a small spontaneous smile. Vertical handheld smartphone tele-camera photograph, 48 mm equivalent, camera 1.55 m high at 5.5 m, subject about 34% of frame. Low side sun broken by trees with open-shade fill and alternating warm and cool patches. Opaque slate athletic T-shirt, relaxed black track pants and practical sneakers; dry clothing, loosely tied damp hair. A blurred railing and leaves near, bicycle rack and changed pool exit mid-ground, trees, path and indistinct pedestrians far back. Keep a motion-soft trailing foot, foreground occlusion, auto-exposure transition, windblown strands and slightly late framing; candid, no text or watermark."
+    },
+    {
+      "id": "H05",
+      "name": "low_light_night_pool",
+      "abstracted_from": ["ref_01.png", "ref_04.png", "ref_06.png", "ref_09.png"],
+      "camera_type": "older full-frame camera at high ISO, handheld",
+      "equivalent_focal_length_mm": 40,
+      "camera_height_m": 1.35,
+      "camera_distance_m": 3.4,
+      "orientation": "vertical",
+      "subject_bbox_xywh_normalized": [0.31, 0.20, 0.40, 0.65],
+      "subject_occupancy_percent": 36,
+      "action": "standing under an awning after an evening swim while squeezing water from a towel",
+      "gaze_expression": "looking toward activity across the pool, quiet neutral expression",
+      "lighting": {
+        "key": "warm wall practical from high camera-left",
+        "fill": "cyan pool spill from below and camera-right",
+        "environment": "small distant lamps with restrained bloom and deep open shadows"
+      },
+      "material_state": "wet hair, damp towel and suit, rain-specked railing, dry opaque robe at shoulders",
+      "background_graph": {
+        "near": ["dark railing", "damp towel folds"],
+        "mid": ["subject under awning", "pool surface", "empty chair"],
+        "far": ["changed pavilion windows", "small lamps", "dark trees"]
+      },
+      "wardrobe_sfw": "opaque charcoal knee-length pool robe over a dark athletic one-piece",
+      "deliberate_imperfections": ["visible chroma noise in shadows", "slight subject movement", "minor practical-light bloom", "underexposed far edge", "uneven towel folds"],
+      "prompt": "Photograph an adult Korean-Canadian woman who is a recreational swimmer, with a natural athletic build and ordinary unretouched appearance, standing under an awning after an evening swim and squeezing water from a towel while watching activity across the pool with a quiet neutral expression. Vertical handheld older full-frame photograph, 40 mm equivalent, camera 1.35 m high at 3.4 m, subject about 36% of frame. Warm wall-practical key high camera-left, cyan pool spill from below right, restrained distant lamp bloom and deep shadows. Opaque charcoal knee-length pool robe over a dark athletic one-piece; wet hair, damp towel and suit, rain-specked railing. Railing and towel near, pool and empty chair mid-ground, changed pavilion, lamps and dark trees far back. Preserve high-ISO chroma noise, slight movement, minor bloom, underexposed edges and uneven folds; physically coherent, no text or watermark."
+    },
+    {
+      "id": "H06",
+      "name": "city_park_recovery",
+      "abstracted_from": ["ref_05.png", "ref_07.png", "ref_08.png"],
+      "camera_type": "consumer smartphone main camera with moderate HDR",
+      "equivalent_focal_length_mm": 28,
+      "camera_height_m": 1.60,
+      "camera_distance_m": 8.0,
+      "orientation": "vertical",
+      "subject_bbox_xywh_normalized": [0.42, 0.36, 0.20, 0.39],
+      "subject_occupancy_percent": 18,
+      "action": "slow recovery walk through an urban meadow after training, carrying a water bottle",
+      "gaze_expression": "brief over-shoulder glance, tired but content",
+      "lighting": {
+        "key": "low warm sunset from frame-left",
+        "fill": "cool open sky",
+        "environment": "long grass shadows and restrained phone HDR on skyline"
+      },
+      "material_state": "dry cotton layers, slightly damp hairline, scuffed shoes, dry late-summer grass",
+      "background_graph": {
+        "near": ["out-of-focus grass heads", "narrow worn path"],
+        "mid": ["small walking subject", "scattered park groups"],
+        "far": ["tree belt", "invented generic skyline", "clear evening sky"]
+      },
+      "wardrobe_sfw": "opaque heather-gray T-shirt, loose navy running shorts over fitted liner, walking shoes",
+      "deliberate_imperfections": ["subject small and off-center", "slight horizon tilt", "flattened HDR highlights", "one shoe motion-soft", "uneven grass color"],
+      "prompt": "Photograph an adult Korean-Canadian woman who is a recreational swimmer, with a natural athletic build and ordinary unretouched appearance, taking a slow recovery walk through an urban meadow after training with a water bottle, giving a brief over-shoulder glance that looks tired but content. Vertical consumer-phone photograph, 28 mm equivalent, camera 1.6 m high at 8 m, subject only about 18% of frame and off-center. Low warm sunset from frame-left, cool open-sky fill, long grass shadows and restrained HDR. Opaque heather-gray T-shirt, loose navy running shorts over a fitted liner and walking shoes; dry cotton, slightly damp hairline, scuffed shoes. Grass and worn path near, scattered park groups mid-ground, tree belt and an invented generic skyline far away. Slight horizon tilt, flattened HDR highlights, one motion-soft shoe and uneven grass color; ordinary candid recovery moment, no text or watermark."
+    }
+  ]
+}

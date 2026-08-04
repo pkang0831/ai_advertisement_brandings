@@ -1,0 +1,97 @@
+{
+  "run_id": "20260730T201545Z",
+  "elapsed_sec": 1148.8,
+  "gen_res": [
+    832,
+    1216
+  ],
+  "i2v_res": [
+    1080,
+    1920
+  ],
+  "width": 832,
+  "height": 1216,
+  "skip_face_detailer": false,
+  "upscale": true,
+  "poses": [
+    "fitness_mat_soft_seated"
+  ],
+  "seeds_per_pose": 6,
+  "auto_pass_count": 0,
+  "total": 6,
+  "items": [
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201545Z/fitness_mat_soft_seated/s00_seed30072026.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201545Z/fitness_mat_soft_seated/s00_seed30072026_gen832x1216.jpg",
+      "seed": 30072026,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 59,
+      "identity": true,
+      "hands": false,
+      "hand_count": 0,
+      "hero_gate_blockers": [
+        "hand_count_0_!=_expected_2",
+        "hands_topology_fail",
+        "expected_hands_not_detected"
+      ]
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "seed": 30072123,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201545Z/fitness_mat_soft_seated/s02_seed30072220.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201545Z/fitness_mat_soft_seated/s02_seed30072220_gen832x1216.jpg",
+      "seed": 30072220,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 59,
+      "identity": true,
+      "hands": false,
+      "hand_count": 2,
+      "hero_gate_blockers": [
+        "hands_topology_fail",
+        "possible_fused_digits"
+      ]
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "seed": 30072317,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "seed": 30072414,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "seed": 30072511,
+      "error": "RuntimeError: black frame mean=0.0"
+    }
+  ],
+  "output_dir": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201545Z",
+  "still_gate": "/Users/RBIPK031/ai_influencer/rina_park/ops/i2v/STILL_GATE.md",
+  "note": "auto_pass \u2260 promote; human QC required before current/",
+  "promote_hint": "PYTHONPATH=rina_park .venv/bin/python rina_park/scripts/promote_i2v_heroes.py --run-id 20260730T201545Z --pick pose_id:sXX"
+}

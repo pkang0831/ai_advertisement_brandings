@@ -1,0 +1,52 @@
+# LEGACY — prefer outfit_types_sfw.yml + outfit_colors_sfw.yml (cartesian axes).
+# Kept as fallback if type/color banks are missing.
+# SFW outfit phrase bank — short CLIP fragments (keep 3–8 words each).
+version: "1.0.0"
+updated: "2026-08-02"
+track: sfw
+items:
+  - beige trench coat street
+  - soft gray hoodie casual
+  - cream knit sweater cozy
+  - black blazer smart casual
+  - white linen shirt breezy
+  - olive utility jacket
+  - camel wool coat autumn
+  - navy pea coat winter
+  - soft pastel cardigan
+  - oversized denim jacket
+  - charcoal athletic set
+  - black sports bra shorts
+  - matching yoga set olive
+  - white tank light joggers
+  - soft loungewear set home
+  - silk camisole soft pants
+  - cotton tee high-waist jeans
+  - striped sailor tee jeans
+  - plaid flannel shirt casual
+  - ribbed turtleneck slim pants
+  - slip dress midi soft
+  - wrap dress daytime
+  - sundress light floral
+  - leather jacket jeans
+  - bomber jacket street
+  - rain coat soft mist
+  - fleece zip-up casual
+  - cropped hoodie street
+  - tennis skirt polo soft
+  - golf-inspired knit vest
+  - office blouse pencil skirt
+  - tailored trousers blouse
+  - wide-leg linen pants
+  - cargo pants soft tee
+  - bike shorts oversized tee
+  - ballet-flat loafers look
+  - clean sneakers athleisure
+  - ankle boots coat look
+  - soft scarf trench look
+  - beanie casual coat
+  - baseball cap street casual
+  - tote bag day look
+  - crossbody bag city walk
+  - minimal jewelry soft glam
+  - soft glam evening blouse

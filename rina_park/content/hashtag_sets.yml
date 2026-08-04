@@ -1,0 +1,50 @@
+version: 1
+required_disclosure_tags:
+  - "#VirtualInfluencer"
+
+sets:
+  swim:
+    - "#SwimJourney"
+    - "#SwimRoutine"
+    - "#PoolDiary"
+    - "#BeginnerSwimmer"
+    - "#LapSwimming"
+    - "#SwimProgress"
+    - "#PoolsideNotes"
+    - "#SwimMotivation"
+  niche:
+    - "#ActiveLifestyle"
+    - "#RoutineBuilding"
+    - "#MovementPractice"
+    - "#SmallWins"
+    - "#RecoveryDay"
+    - "#ConsistencyJourney"
+    - "#EverydayAthlete"
+    - "#WellnessRoutine"
+  local:
+    - "#TorontoLife"
+    - "#TorontoCreator"
+    - "#TorontoWaterfront"
+    - "#TorontoParks"
+    - "#ExploreToronto"
+    - "#TorontoLifestyle"
+    - "#The6ix"
+    - "#OntarioLife"
+  virtual_creator:
+    - "#VirtualInfluencer"
+    - "#VirtualCreator"
+    - "#AICreator"
+    - "#AICharacter"
+    - "#DigitalCreator"
+    - "#FictionalCharacter"
+
+rotation_rules:
+  instagram_tags_per_post:
+    min: 5
+    max: 8
+  include_from_each_set: true
+  require_disclosure_tag: true
+  exempt_required_tags_from_max_frequency: true
+  no_identical_instagram_sets: true
+  max_tag_uses_across_32_instagram_posts: 12
+  patreon_hashtags: false

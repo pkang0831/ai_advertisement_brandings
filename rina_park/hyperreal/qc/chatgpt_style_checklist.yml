@@ -1,0 +1,153 @@
+# ChatGPT-style hyperreal fail gates (future review)
+# Source: Week1 feedback (~85–90% AI-looking) → content/story_3year/HYPERREAL_REMEDIATION_PLAN.md
+# Usage: score per original image (not contact sheets). fail_any_hard → regen or mandatory inpaint.
+
+version: 1
+name: chatgpt_style_hyperreal_qc
+applies_to:
+  - week01_ig_originals
+  - upload_pack_week01
+  - future_ig_sfw
+notes_ko: |
+  업스케일/샤픈만으로 패스시키지 말 것.
+  손·헤어·피부·다크원단·조명 불일치를 우선 본다.
+  Soft glam은 허용하되 plastic / glass-eye는 hard fail.
+
+scoring:
+  scale: 0_to_5   # 0=clean, 5=severe AI tell
+  pass_max_soft: 2
+  hard_fail_at: 4
+
+gates:
+  - id: hand_melt
+    priority: 1
+    severity: hard
+    fail_if:
+      - fused_fingers
+      - melted_palm
+      - extra_or_missing_digits
+      - grip_without_contact_physics  # cup/bag not touching coherently
+    action_on_fail:
+      prefer: masked_hand_inpaint   # remediation default — preserve framing
+      else: hide_via_recompose      # only when composition naturally supports
+    note_ko: |
+      Remediation: hide/crop/occlusion 기본값 아님. 로컬 hand inpaint + contact physics.
+      Generation(새 샷)만 composition hide 선호. 방치 금지.
+
+  - id: hair_melt
+    priority: 2
+    severity: hard
+    fail_if:
+      - helmet_hair
+      - hair_edge_blended_into_bg
+      - wet_plastic_strands
+      - melted_hairline
+    action_on_fail: masked_hair_edge_inpaint
+
+  - id: plastic_skin
+    priority: 3
+    severity: hard
+    fail_if:
+      - porcelain_or_wax_skin
+      - airbrushed_no_microtexture
+      - doll_cgi_face
+      - glass_perfect_eyes          # over-polished iris/catchlights
+    soft_fail_if:
+      - zero_asymmetry
+      - beauty_filter_look
+    pass_band: photoreal_soft_glam  # faint pores OK; documentary acne not required
+    action_on_fail: softer_facedetailer_or_skin_inpaint
+
+  - id: logo_mush_dark_fabric
+    priority: 4
+    severity: hard
+    fail_if:
+      - unreadable_mush_logo
+      - black_cardigan_blob
+      - fabric_without_folds_or_knit
+      - brand_swoosh_artifacts
+    action_on_fail: masked_fabric_inpaint_or_regen
+
+  - id: lighting_mismatch
+    priority: 5
+    severity: hard
+    fail_if:
+      - face_lit_against_env_key
+      - mixed_color_temp_unmotivated
+      - studio_beauty_light_on_candid_scene
+      - shadow_direction_conflict
+    action_on_fail: low_denoise_relight_or_regen
+
+  - id: identity_micro_drift
+    priority: 6
+    severity: hard   # mandatory across shots (locked 2026-07-29)
+    fail_if:
+      - same_day_face_shape_drift
+      - eye_spacing_drift_across_set
+      - age_or_makeup_jump
+      - ipd_or_eye_spacing_inconsistent
+      - nose_tip_alar_ratio_drift
+      - jaw_mandible_length_drift
+      - lip_thickness_drift
+      - hairline_shape_drift
+      - shoulder_or_body_width_drift
+      - face_vs_body_skin_tone_mismatch
+    action_on_fail: identity_lock_img2img_0.15_0.3
+    note_ko: Extreme realism = 같은 사람·같은 물리 세계. pores만으로 통과 금지.
+
+shot_manifest_fields:  # Phase A qc_manifest
+  - file_path
+  - defect_region
+  - defect_type
+  - severity_0_to_3
+  - identity_change_risk
+  - recommended_op  # leave | local_inpaint | img2img | regenerate
+  - acceptance_criteria
+
+anti_patterns:
+  - id: upscale_sharpen_only
+    severity: hard
+    description: Treating upscale/sharpen as remediation increases AI tell.
+    blocked: true
+  - id: seedvr2_aggressive
+    severity: hard
+    blocked: true
+    allow: conservative_or_off
+  - id: contact_sheet_as_source
+    severity: hard
+    blocked: true
+    note: Work on per-image originals only.
+
+prompt_philosophy_flags:
+  avoid_positive_spam:
+    - hyperrealistic
+    - "8k"
+    - masterpiece
+    - "best quality"
+    - porcelain skin
+  avoid_negative_overkill_that_forces_plastic:
+    - heavy pores as only path  # prefer faint texture, not acne documentary
+  prefer:
+    - candid DSLR language
+    - subtle imperfections
+    - soft glam with microtexture
+    - gaze away
+    - hands composition-hide on new shots
+    - hands local_inpaint on remediation (hide not default)
+
+week1_phases:
+  A: qc_manifest_plus_pilot_remediate  # v1 keep; v2 parallel under out/hyperreal_remediation/
+  B: batch_worst_offenders             # after A pass criteria
+  C: masked_inpaint_keepers
+  D: light_grain_only
+promotion:
+  keep_v1_upload_pack: out/upload_packs/week01_2026-08-03/
+  require_side_by_side_and_200pct_crops: true
+  evaluate:
+    - real_photo_likelihood
+    - identity_consistency
+    - anatomy
+    - attractiveness_retention
+    - lighting
+    - ai_artifacts
+

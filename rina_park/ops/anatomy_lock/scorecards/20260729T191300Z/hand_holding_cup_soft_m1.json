@@ -1,0 +1,67 @@
+{
+  "image": "/Users/RBIPK031/ai_influencer/rina_park/out/anatomy_lock/20260729T191300Z/hand_holding_cup_soft/m1_catalog.jpg",
+  "method": "1_pose_catalog",
+  "pose_id": "hand_holding_cup_soft",
+  "track": "sfw",
+  "human_review": {
+    "hands": {
+      "score_0_to_2": null,
+      "notes": ""
+    },
+    "feet": {
+      "score_0_to_2": null,
+      "notes": ""
+    },
+    "genitals": {
+      "score_0_to_2": null,
+      "notes": "",
+      "na_if_sfw": true
+    },
+    "identity": {
+      "score_0_to_2": null,
+      "notes": ""
+    },
+    "overall_pass": null
+  },
+  "rubric": {
+    "0": "fail \u2014 mutated / unusable",
+    "1": "borderline \u2014 maybe salvage with refine",
+    "2": "pass \u2014 production-usable for region"
+  },
+  "auto_qc": {
+    "status": "complete",
+    "image": "/Users/RBIPK031/ai_influencer/rina_park/out/anatomy_lock/20260729T191300Z/hand_holding_cup_soft/m1_catalog.jpg",
+    "track": "sfw",
+    "identity": {
+      "pass": true,
+      "face_count": 1,
+      "blockers": []
+    },
+    "hands": {
+      "pass": true,
+      "count": 1,
+      "expected": 1,
+      "topology_flags": [],
+      "blockers": [],
+      "auto_score_proxy": 2
+    },
+    "feet": {
+      "pass": true,
+      "require": false,
+      "blockers": [],
+      "status": "estimated",
+      "ankles_visible": 0,
+      "mean_foot_visibility": 0.1049,
+      "feet_score_proxy": 0.262
+    },
+    "genitals": {
+      "pass": true,
+      "require": false,
+      "blockers": [],
+      "status": "na_sfw",
+      "score_proxy": null
+    },
+    "overall_auto_pass": true,
+    "detector": "mediapipe-tasks-local-0.10.35"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "run_id": "20260730T142420Z",
+  "elapsed_sec": 1576.6,
+  "width": 1088,
+  "height": 1920,
+  "poses": [
+    "hand_resting_lap_seated",
+    "hand_pockets_3q",
+    "fitness_mat_soft_seated"
+  ],
+  "seeds_per_pose": 4,
+  "auto_pass_count": 1,
+  "total": 12,
+  "items": [
+    {
+      "pose_id": "hand_resting_lap_seated",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T142420Z/hand_resting_lap_seated/s00_seed30072026.jpg",
+      "seed": 30072026,
+      "auto_pass": true,
+      "res_ok": true,
+      "identity": true,
+      "hands": true
+    },
+    {
+      "pose_id": "hand_resting_lap_seated",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T142420Z/hand_resting_lap_seated/s01_seed30072123.jpg",
+      "seed": 30072123,
+      "auto_pass": false,
+      "res_ok": true,
+      "identity": false,
+      "hands": false
+    },
+    {
+      "pose_id": "hand_resting_lap_seated",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T142420Z/hand_resting_lap_seated/s02_seed30072220.jpg",
+      "seed": 30072220,
+      "auto_pass": false,
+      "res_ok": true,
+      "identity": false,
+      "hands": true
+    },
+    {
+      "pose_id": "hand_resting_lap_seated",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T142420Z/hand_resting_lap_seated/s03_seed30072317.jpg",
+      "seed": 30072317,
+      "auto_pass": false,
+      "res_ok": true,
+      "identity": false,
+      "hands": true
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T142420Z/hand_pockets_3q/s00_seed30073026.jpg",
+      "seed": 30073026,
+      "auto_pass": false,
+      "res_ok": true,
+      "identity": false,
+      "hands": true
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "seed": 30073123,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "seed": 30073220,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "seed": 30073317,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "seed": 30074026,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "seed": 30074123,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "seed": 30074220,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "seed": 30074317,
+      "error": "RuntimeError: black frame mean=0.0"
+    }
+  ],
+  "output_dir": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T142420Z",
+  "still_gate": "/Users/RBIPK031/ai_influencer/rina_park/ops/i2v/STILL_GATE.md",
+  "promote_hint": "PYTHONPATH=rina_park .venv/bin/python rina_park/scripts/promote_i2v_heroes.py --run-id 20260730T142420Z --pick pose_id:sXX"
+}

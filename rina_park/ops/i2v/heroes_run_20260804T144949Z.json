@@ -1,0 +1,178 @@
+{
+  "run_id": "20260804T144949Z",
+  "elapsed_sec": 205.0,
+  "gen_res": [
+    832,
+    1216
+  ],
+  "i2v_res": [
+    1080,
+    1920
+  ],
+  "width": 832,
+  "height": 1216,
+  "skip_face_detailer": true,
+  "upscale": true,
+  "poses": [
+    "hand_holding_cup_soft"
+  ],
+  "seeds_per_pose": 1,
+  "combo": true,
+  "combo_mode": "random_seeded",
+  "combo_track": "sfw",
+  "combo_interleave": false,
+  "combo_counts": {
+    "expressions": 15,
+    "outfit_types": 12,
+    "outfit_colors": 8,
+    "backgrounds": 12,
+    "lora_presets": 1
+  },
+  "combo_axes": {
+    "track": "sfw",
+    "pose": 1,
+    "expression": 15,
+    "outfit_type": 12,
+    "outfit_color": 8,
+    "background": 12,
+    "lora": 1,
+    "bank_product": 17280,
+    "total_cartesian": 17280,
+    "paths": {
+      "expressions": "/Users/RBIPK031/ai_influencer/rina_park/ops/prompt_bank/expressions_sfw.yml",
+      "outfit_types": "/Users/RBIPK031/ai_influencer/rina_park/ops/prompt_bank/outfit_types_sfw.yml",
+      "outfit_colors": "/Users/RBIPK031/ai_influencer/rina_park/ops/prompt_bank/outfit_colors_sfw.yml",
+      "backgrounds": "/Users/RBIPK031/ai_influencer/rina_park/ops/prompt_bank/backgrounds_sfw.yml",
+      "lora_presets": "/Users/RBIPK031/ai_influencer/rina_park/ops/prompt_bank/lora_presets_sfw.yml"
+    },
+    "private_loaded": false
+  },
+  "combo_jobs": 5,
+  "combo_max_jobs": 0,
+  "auto_pass_count": 2,
+  "total": 5,
+  "items": [
+    {
+      "pose_id": "hand_holding_cup_soft",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260804T144949Z/hand_holding_cup_soft/s00_seed30082026.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260804T144949Z/hand_holding_cup_soft/s00_seed30082026_gen832x1216.jpg",
+      "seed": 30082026,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 77,
+      "identity": true,
+      "hands": true,
+      "hand_count": 2,
+      "hero_gate_blockers": [
+        "hand_count_2_!=_expected_1"
+      ],
+      "combo_job_index": 0
+    },
+    {
+      "pose_id": "hand_holding_cup_soft",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260804T144949Z/hand_holding_cup_soft/s01_seed30082123.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260804T144949Z/hand_holding_cup_soft/s01_seed30082123_gen832x1216.jpg",
+      "seed": 30082123,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 80,
+      "identity": true,
+      "hands": true,
+      "hand_count": 2,
+      "hero_gate_blockers": [
+        "hand_count_2_!=_expected_1"
+      ],
+      "combo_job_index": 1
+    },
+    {
+      "pose_id": "hand_holding_cup_soft",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260804T144949Z/hand_holding_cup_soft/s02_seed30082220.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260804T144949Z/hand_holding_cup_soft/s02_seed30082220_gen832x1216.jpg",
+      "seed": 30082220,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 77,
+      "identity": true,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": [],
+      "combo_job_index": 2
+    },
+    {
+      "pose_id": "hand_holding_cup_soft",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260804T144949Z/hand_holding_cup_soft/s03_seed30082317.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260804T144949Z/hand_holding_cup_soft/s03_seed30082317_gen832x1216.jpg",
+      "seed": 30082317,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 78,
+      "identity": true,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": [],
+      "combo_job_index": 3
+    },
+    {
+      "pose_id": "hand_holding_cup_soft",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260804T144949Z/hand_holding_cup_soft/s04_seed30082414.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260804T144949Z/hand_holding_cup_soft/s04_seed30082414_gen832x1216.jpg",
+      "seed": 30082414,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 78,
+      "identity": true,
+      "hands": false,
+      "hand_count": 2,
+      "hero_gate_blockers": [
+        "hand_count_2_!=_expected_1",
+        "hands_topology_fail",
+        "possible_fused_digits"
+      ],
+      "combo_job_index": 4
+    }
+  ],
+  "output_dir": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260804T144949Z",
+  "still_gate": "/Users/RBIPK031/ai_influencer/rina_park/ops/i2v/STILL_GATE.md",
+  "note": "auto_pass \u2260 promote; human QC required before current/",
+  "promote_hint": "PYTHONPATH=rina_park .venv/bin/python rina_park/scripts/promote_i2v_heroes.py --run-id 20260804T144949Z --pick pose_id:sXX"
+}

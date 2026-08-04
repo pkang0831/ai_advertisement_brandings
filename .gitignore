@@ -1,0 +1,95 @@
+# Secrets
+.env
+**/.env
+*.partial
+
+# Python / venv
+.venv/
+venv/
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS / IDE
+.DS_Store
+**/.DS_Store
+.idea/
+.vscode/
+*.log
+logs/
+**/logs/
+
+# Hugging Face / caches
+.cache/
+**/huggingface/
+**/.huggingface/
+**/transformers_cache/
+**/torch_home/
+
+# Local ComfyUI checkout (nested repo + weights)
+ComfyUI/
+**/ComfyUI/models/**
+
+# Model weights & archives (never commit)
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+*.onnx
+*.bin
+*.gguf
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.rar
+models/
+**/models/**
+!**/models/**/*.md
+!**/CIVITAI_DOWNLOADS.md
+
+# Generated outputs & private media
+**/out/**
+rina_park/out/
+out/
+rina_park/private/
+**/private/
+rina_park/factory/mature_non_explicit/
+
+# Identity / training / moodboard media (binary references)
+rina_park/identity/
+rina_park/moodboard/
+rina_park/hyperreal/identity/
+rina_park/vendor/
+
+# Common media (generated / local assets)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+*.bmp
+*.tiff
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.wav
+*.mp3
+*.flac
+*.m4a
+
+# Keep sidecar JSON next to ignored media if needed is fine as code;
+# ignore large notebook dumps with embeds at repo root
+devenira_sdxl_colab_txt2img.ipynb
+
+# Desktop / external model links
+Desktop/
+Desktop/Models/
+
+# Local runtime DBs
+*.db

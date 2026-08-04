@@ -1,0 +1,184 @@
+# Rina Park — 반복 주간 리듬 (SFW IG + optional home local)
+# 매일 ≥1 IG 슬롯 보장.
+# home_mature_slots: private/content/weekly_home_mature_slots.yml (soft-merge via load_overlays).
+# hard_angle_back_of_head: rare — 기본 템플릿에서 제외, weekend optional만.
+
+meta:
+  character: rina_park
+  trigger: rina_park_person
+  default_lora_scale: 0.90
+  ig_min_posts_per_day: 1
+  ig_target_posts_per_day: 2
+  ig_max_concept_beats_per_day: 8
+  home_mature_default: optional
+  never_publish_home_mature: true
+  location_policy: fictional_toronto_vibe_no_live_checkin
+  disclosure_gate: pending_user
+
+# 요일별 슬롯. scene_type → scene_presets.yml / theme_pillars.yml
+days:
+  mon:
+    label_ko: 월요일 — 짐 데이
+    story_energy: restart_commitment
+    outfit_continuity: athleisure_to_gym
+    ig_slots:
+      - slot: morning
+        pillar: fitness
+        scene_types: [gym_arrival, locker_transition]
+        formats: [carousel, still]
+        required: true
+      - slot: midday
+        pillar: food
+        scene_types: [protein_lunch, meal_prep_detail]
+        formats: [still]
+        required: false
+      - slot: evening
+        pillar: selfcare
+        scene_types: [post_workout_stretch_home, wind_down_sfw]
+        formats: [still, reel]
+        required: true
+
+  tue:
+    label_ko: 화요일 — 필라테스 / 모빌리티
+    story_energy: controlled_strength
+    ig_slots:
+      - slot: morning
+        pillar: fitness
+        scene_types: [pilates_studio, mat_setup]
+        formats: [carousel, reel]
+        required: true
+      - slot: afternoon
+        pillar: cafe
+        scene_types: [cafe_laptop, iced_drink_window]
+        formats: [still]
+        required: true
+      - slot: evening
+        pillar: errands
+        scene_types: [grocery_run, pharmacy_errand]
+        formats: [still]
+        required: false
+
+  wed:
+    label_ko: 수요일 — 카페 + 가벼운 움직임
+    story_energy: social_soft_focus
+    ig_slots:
+      - slot: morning
+        pillar: cafe
+        scene_types: [cafe_morning, pastry_detail]
+        formats: [carousel]
+        required: true
+      - slot: midday
+        pillar: fitness
+        scene_types: [walk_commute, resistance_band_park]
+        formats: [reel, still]
+        required: true
+      - slot: evening
+        pillar: friends_fictional
+        scene_types: [dinner_with_friend_blurred, group_toast_env]
+        formats: [still]
+        required: false
+
+  thu:
+    label_ko: 목요일 — 근력 / 퍼포먼스
+    story_energy: effort_visible
+    ig_slots:
+      - slot: morning
+        pillar: fitness
+        scene_types: [strength_session, gym_mirror_3q]  # mirror 3/4 — hard back angle 금지
+        formats: [carousel, still]
+        required: true
+      - slot: afternoon
+        pillar: food
+        scene_types: [post_lift_meal, smoothie_bar]
+        formats: [still]
+        required: true
+      - slot: evening
+        pillar: selfcare
+        scene_types: [foam_roll, early_lights_out_sfw]
+        formats: [still]
+        required: false
+
+  fri:
+    label_ko: 금요일 — 아웃도어 / 주말 예고
+    story_energy: release_into_weekend
+    ig_slots:
+      - slot: morning
+        pillar: fitness
+        scene_types: [outdoor_run, waterfront_walk]
+        formats: [reel, carousel]
+        required: true
+      - slot: afternoon
+        pillar: cafe
+        scene_types: [friday_treat_cafe]
+        formats: [still]
+        required: false
+      - slot: evening
+        pillar: weekend_outdoors
+        scene_types: [golden_hour_city, rooftop_env_sfw]
+        formats: [carousel]
+        required: true
+
+  sat:
+    label_ko: 토요일 — 야외·탐험
+    story_energy: explore_restore
+    ig_slots:
+      - slot: morning
+        pillar: weekend_outdoors
+        scene_types: [park_picnic, trail_hike]
+        formats: [carousel]
+        required: true
+      - slot: midday
+        pillar: food
+        scene_types: [market_brunch, farmers_market]
+        formats: [still]
+        required: true
+      - slot: evening
+        pillar: friends_fictional
+        scene_types: [sunset_with_friend_env, movie_night_sfw]
+        formats: [still, reel]
+        required: false
+      - slot: optional_rare
+        pillar: fitness
+        scene_types: [hard_angle_back_of_head]  # optional / rare — identity risk
+        formats: [still]
+        required: false
+        notes: "뒤통수·극단 오버숄더. 주 0–1회 이하. 승인 게이트 권장."
+
+  sun:
+    label_ko: 일요일 — 회복·자케어·주간 리셋
+    story_energy: soft_close_week
+    ig_slots:
+      - slot: morning
+        pillar: selfcare
+        scene_types: [slow_morning_home_sfw, skincare_vanity]
+        formats: [carousel, reel]
+        required: true
+      - slot: midday
+        pillar: food
+        scene_types: [sunday_meal_prep, cozy_soup]
+        formats: [still]
+        required: true
+      - slot: evening
+        pillar: fitness
+        scene_types: [gentle_yoga_home, week_plan_notebook]
+        formats: [still]
+        required: true
+
+# 시즌이 주간 슬롯을 덮어쓸 때 (예: 폭설 → outdoor_run → treadmill)
+seasonal_swap_rules:
+  deep_winter:
+    replace:
+      outdoor_run: treadmill_indoor
+      waterfront_walk: mall_walk_or_gallery
+      park_picnic: indoor_conservatory_or_cafe
+  heat_wave:
+    prefer_slots: [early_morning, late_evening]
+    add_props: [water_bottle, cap, iced_drink]
+
+publish_hint_ig_et:
+  # ops/strategy와 다를 수 있음 — 3년 daily는 "매일 ≥1"이 우선
+  preferred_windows:
+    - "07:30-09:00"
+    - "12:00-13:30"
+    - "19:00-21:00"
+  memory_copy_lag_hours: 24

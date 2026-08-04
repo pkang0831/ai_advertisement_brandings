@@ -1,0 +1,48 @@
+{
+  "run_id": "20260729T190311Z",
+  "reviewer": "anatomy_lock_agent",
+  "rubric": {"0": "fail", "1": "borderline", "2": "pass"},
+  "items": [
+    {
+      "image": "out/anatomy_lock/20260729T190311Z/hand_holding_cup_soft/m1_catalog.jpg",
+      "method": "1_pose_catalog",
+      "hands": 0,
+      "feet": null,
+      "genitals": null,
+      "notes": "cup grip fused/extra digits; auto QC false positive"
+    },
+    {
+      "image": "out/anatomy_lock/20260729T190311Z/hand_resting_lap_seated/m3_crop_cn.jpg",
+      "method": "3_crop_controlnet",
+      "hands": 1,
+      "feet": null,
+      "genitals": null,
+      "notes": "soft resting usable for lifestyle"
+    },
+    {
+      "image": "out/anatomy_lock/20260729T190311Z/foot_seated_ankle_soft/m1_catalog.jpg",
+      "method": "1_pose_catalog",
+      "hands": 1,
+      "feet": 2,
+      "genitals": null,
+      "notes": "sneakers/feet clear; phone hands soft"
+    },
+    {
+      "image": "private/nsfw_test/private_media/anatomy_lock/20260729T190311Z/nsfw_standing_mirror_hip_angle/m1_catalog.jpg",
+      "method": "1_pose_catalog",
+      "hands": 1,
+      "feet": null,
+      "genitals": 1,
+      "notes": "genital visible soft/airbrushed; local only"
+    },
+    {
+      "image": "out/anatomy_lock/20260729T191300Z/hand_holding_cup_soft/m2_2pass.jpg",
+      "method": "2_dedicated_2pass",
+      "hands": 1,
+      "feet": null,
+      "genitals": null,
+      "notes": "NaN-guard rerun; no black void; joints still soft"
+    }
+  ],
+  "production_recommendation": "method1_whitelist_primary_optional_m3_m2_not_mps_stable"
+}

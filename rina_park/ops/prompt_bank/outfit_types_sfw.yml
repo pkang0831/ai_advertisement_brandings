@@ -1,0 +1,18 @@
+# SFW outfit TYPE phrases — short CLIP fragments (no color; color axis separate).
+version: "1.1.0"
+updated: "2026-08-02"
+track: sfw
+axis: outfit_types
+items:
+  - trench coat
+  - soft hoodie
+  - knit sweater
+  - tailored blazer
+  - linen shirt
+  - utility jacket
+  - sports bra shorts set
+  - matching yoga set
+  - midi slip dress
+  - daytime wrap dress
+  - oversized denim jacket
+  - wide-leg linen pants look

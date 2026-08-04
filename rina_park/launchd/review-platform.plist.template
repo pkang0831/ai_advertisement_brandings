@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.devenira.rina.review.platform</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>__ABSOLUTE_VENV_STREAMLIT__</string>
+    <string>run</string>
+    <string>__ABSOLUTE_REPO__/rina_park/review/app.py</string>
+    <string>--server.address</string>
+    <string>127.0.0.1</string>
+    <string>--server.port</string>
+    <string>8501</string>
+    <string>--server.headless</string>
+    <string>true</string>
+    <string>--</string>
+    <string>--profile</string>
+    <string>platform</string>
+    <string>--db</string>
+    <string>__ABSOLUTE_PLATFORM_REVIEW_DB__</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PYTHONPATH</key>
+    <string>__ABSOLUTE_REPO__</string>
+  </dict>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ProcessType</key>
+  <string>Interactive</string>
+  <key>StandardOutPath</key>
+  <string>__ABSOLUTE_LOG_DIR__/rina-review-platform.log</string>
+  <key>StandardErrorPath</key>
+  <string>__ABSOLUTE_LOG_DIR__/rina-review-platform.error.log</string>
+</dict>
+</plist>

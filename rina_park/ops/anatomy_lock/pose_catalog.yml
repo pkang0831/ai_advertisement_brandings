@@ -1,0 +1,270 @@
+# Anatomy Lock — pose whitelist / banlist (SFW public)
+# Hands / feet SFW only. Private NSFW poses live in:
+#   rina_park/private/pose_catalog_nsfw.yml  (gitignored; merged by load_pose_catalog)
+# Default generation MUST pick from whitelist; banned poses are hard-rejected.
+
+version: "1.0.0"
+updated: "2026-08-02"
+character_trigger: rina_park_person
+
+policy:
+  default_mode: whitelist_only
+  reject_banned_hard: true
+  hands_hero_requires_whitelist: true
+  notes: >
+    Prior full-frame OpenPose ControlNet pilots failed 200% hand gates.
+    Prefer composition whitelist first; then narrow 2-pass; then crop+verified-pose CN.
+
+# Strong negatives — baseline for all methods (necessary, not sufficient)
+negatives:
+  anatomy_core: >-
+    mutated hands, extra fingers, missing fingers, fused fingers, fused digits,
+    too many fingers, fewer than five fingers, malformed hands, deformed hands,
+    bad hands, poorly drawn hands, extra limbs, missing limbs, disconnected limbs,
+    bad anatomy, malformed limbs, twisted wrists, broken wrists, claw hands,
+    melted hands, blob hands, mutated feet, extra toes, missing toes, fused toes,
+    deformed feet, bad feet, poorly drawn feet, clubfoot, floating limbs,
+    disproportionate limbs, extra arms, extra legs, amputated, disfigured
+  quality_core: >-
+    plastic skin, beauty filter, oversmooth skin, CGI, 3d render, anime,
+    illustration, painting, watermark, text, logo, underage, teen, babyface
+  sfw_extra: >-
+    nude, explicit, nipples, genitals, pussy, penis, sexual act
+
+# ---------------------------------------------------------------------------
+# ALLOWED — high historical pass-rate compositions
+# ---------------------------------------------------------------------------
+whitelist:
+  # --- SFW hands ---
+  - id: hand_pockets_3q
+    track: sfw
+    regions: [hands]
+    difficulty: easy
+    pass_rate_prior: high
+    composition: >
+      standing three-quarter body, both hands casually in jacket or hoodie pockets,
+      wrists mostly hidden, fingers not splayed, simple pocket hide
+    positive_extra: >
+      hands in pockets, pockets hiding fingers, relaxed shoulders, candid smartphone photo
+    camera: environmental three-quarter, subject 35-50% of frame
+    expected_visible_hands: 0
+    hand_visibility: hidden_or_partial
+    foot_visibility: optional_soft
+    banned_overlap: false
+
+  - id: hand_holding_cup_soft
+    track: sfw
+    regions: [hands]
+    difficulty: hard
+    pass_rate_prior: low  # 2026-07-29 anatomy_lock: two-hand cup grip still melts; keep for experiments only
+    production_default: false
+    composition: >
+      one hand holding a simple coffee cup near waist or chest, fingers wrapped simply
+      around cup (thick cup only), other hand soft/obscured
+    positive_extra: >
+      holding coffee cup, simple cup grip, fingers wrapped around cup, soft focus on hand
+    camera: waist-up to three-quarter, cup as prop
+    expected_visible_hands: 1
+    hand_visibility: soft_prop_grip
+    foot_visibility: out_of_frame
+    banned_overlap: false
+
+  - id: hand_holding_tote_side
+    track: sfw
+    regions: [hands]
+    difficulty: medium
+    pass_rate_prior: medium_high
+    composition: >
+      one hand holding tote bag strap at side, fingers lightly closed on thick strap,
+      other hand in pocket or cropped
+    positive_extra: >
+      holding tote bag strap, simple strap grip, thick strap, candid street photo
+    camera: full or three-quarter walking pause
+    expected_visible_hands: 1
+    hand_visibility: soft_prop_grip
+    foot_visibility: soft_or_cropped
+    banned_overlap: false
+
+  - id: hand_resting_lap_seated
+    track: sfw
+    regions: [hands]
+    difficulty: easy
+    pass_rate_prior: high
+    composition: >
+      seated, hands resting softly together on lap or thighs, fingers gently curved,
+      no interlocking complex weave, palms mostly down
+    positive_extra: >
+      hands resting on lap, relaxed fingers, gentle natural hand pose, soft daylight
+    camera: seated three-quarter indoor
+    expected_visible_hands: 2
+    hand_visibility: soft_resting
+    foot_visibility: soft_or_cropped
+    banned_overlap: false
+
+  - id: hand_cropped_out
+    track: sfw
+    regions: [hands]
+    difficulty: easy
+    pass_rate_prior: high
+    composition: >
+      framing crops hands out of frame entirely (elbows/forearms edge only if any)
+    positive_extra: >
+      hands out of frame, cropped at elbows, face and torso hero
+    camera: upper-body environmental
+    expected_visible_hands: 0
+    hand_visibility: none
+    foot_visibility: none
+    banned_overlap: false
+
+  - id: fitness_mat_soft_seated
+    track: sfw
+    regions: [hands]
+    difficulty: easy
+    pass_rate_prior: high
+    production_default: true
+    i2v_hero: true
+    composition: >
+      seated on yoga mat in bright clean home studio, athletic wear (sports bra and
+      shorts), torso three-quarter, hands resting simply on thighs or mat (palms soft,
+      no grip props), calm soft eye contact, stable full-body proportions
+    positive_extra: >
+      yoga mat, home fitness studio, soft daylight, athletic lifestyle influencer,
+      simple hands on thighs, photoreal soft glam skin, clean background wall
+    camera: three-quarter seated on mat, subject 45-60% of frame, portrait 9:16
+    expected_visible_hands: 2
+    hand_visibility: soft_resting
+    foot_visibility: soft_or_cropped
+    banned_overlap: false
+
+  # --- SFW feet ---
+  - id: foot_standing_flat_sneakers
+    track: sfw
+    regions: [feet]
+    difficulty: medium
+    pass_rate_prior: medium_high
+    composition: >
+      standing full-body, feet parallel flat on ground in clean sneakers,
+      no complex dance pointe, no crossed ankles twist, shoes reduce toe risk
+    positive_extra: >
+      standing flat on both feet, white sneakers, natural stance, feet visible but not hero close-up
+    camera: full-body environmental, slight high angle optional
+    expected_visible_hands: 0
+    hand_visibility: pockets_or_cropped
+    foot_visibility: shod_visible
+    banned_overlap: false
+
+  - id: foot_seated_ankle_soft
+    track: sfw
+    regions: [feet]
+    difficulty: medium
+    pass_rate_prior: medium
+    composition: >
+      seated on bench, ankles softly visible in socks or sneakers, feet not close-up hero,
+      legs uncrossed or simple cross at knee only
+    positive_extra: >
+      seated, sneakers visible, soft ankle view, candid lifestyle
+    camera: three-quarter seated
+    expected_visible_hands: 0
+    hand_visibility: pockets_or_lap_soft
+    foot_visibility: shod_soft
+    banned_overlap: false
+
+  - id: foot_mid_stride_side
+    track: sfw
+    regions: [feet]
+    difficulty: medium
+    pass_rate_prior: medium
+    composition: >
+      walking side/three-quarter, mid-stride with one foot planted one lifting slightly,
+      sneakers, motion soft not dance kick
+    positive_extra: >
+      mid-stride walk, sneakers, natural gait, feet not close-up
+    camera: full-body street candid
+    expected_visible_hands: 0
+    hand_visibility: tote_or_pocket
+    foot_visibility: shod_motion
+    banned_overlap: false
+
+  # Private NSFW whitelist entries: see private/pose_catalog_nsfw.yml (merged at load)
+
+# ---------------------------------------------------------------------------
+# BANNED — hard reject from default generation
+# ---------------------------------------------------------------------------
+banned:
+  - id: ban_typing_keyboard
+    regions: [hands]
+    reason: complex multi-finger articulation; historically melts
+    match_keywords: [typing, keyboard, laptop keys, texting on phone keys]
+
+  - id: ban_complex_grip
+    regions: [hands]
+    reason: thin-object pinch / multi-object grip fails often
+    match_keywords:
+      - pinching
+      - holding chopsticks
+      - holding thin pen writing
+      - juggling
+      - complicated grip
+      - fingers spread wide counting
+      - peace sign close-up
+      - ok sign
+      - pointing at camera close
+
+  - id: ban_interlocked_fingers
+    regions: [hands]
+    reason: interlocked / prayer weave confuses finger topology
+    match_keywords: [interlocked fingers, fingers intertwined, complex prayer hands]
+
+  - id: ban_hand_macro_hero
+    regions: [hands]
+    reason: extreme hand close-up exposes model weakness
+    match_keywords: [extreme hand close-up, macro fingers, hand fills frame]
+
+  - id: ban_bare_foot_macro
+    regions: [feet]
+    reason: bare toe detail historically poor unless dedicated foot pass
+    match_keywords: [bare feet close-up, toe macro, soles close-up hero]
+
+  - id: ban_pointe_dance
+    regions: [feet]
+    reason: extreme foot articulation
+    match_keywords: [pointe shoes en pointe, ballet pointe extreme, yoga foot bind]
+
+  - id: ban_frog_leg_crotch_macro
+    regions: [genitals]
+    reason: extreme splay + macro = genital melt / bad anatomy
+    match_keywords:
+      - frog leg extreme
+      - crotch macro fill frame
+      - legs behind head
+      - extreme spread eagle close-up
+
+  - id: ban_multi_person_hands
+    regions: [hands]
+    reason: multi-person contact hands amplify errors
+    match_keywords: [holding hands with another person, couple hand tangle]
+
+# Remediation / method hints per region
+methods:
+  "1_pose_catalog":
+    description: Whitelist-only compositions + strong negatives
+  "2_dedicated_2pass":
+    description: >
+      Full-body first; if identity/QC coarse pass, narrow-mask inpaint second pass
+      for hands and/or feet and/or genital region. Fixed seed offsets.
+    seed_offsets:
+      base: 0
+      hands: 1000
+      feet: 2000
+      genitals: 3000
+    denoise:
+      hands: 0.42
+      feet: 0.40
+      genitals: 0.38
+  "3_crop_controlnet":
+    description: >
+      Hand/foot crop + verified OpenPose/depth reference ControlNet, then composite.
+      NOT full-frame OpenPose retry of prior failed path.
+    controlnet_weight: 0.55
+    crop_size: 768
+    denoise: 0.45

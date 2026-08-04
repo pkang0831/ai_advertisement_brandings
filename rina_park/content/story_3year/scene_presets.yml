@@ -1,0 +1,536 @@
+# scene_type → 프롬프트 블록 + 하이퍼파라미터 프리셋
+# identity_fixed 블록은 모든 SFW 씬에 prepend. scene_block만 교체.
+
+meta:
+  identity_fixed: >-
+    rina_park_person, fictional adult Korean-Canadian woman age 27,
+    fair natural skin texture, long dark hair, soft glam, relaxed closed mouth,
+    candid smartphone lifestyle photo, looking away from camera,
+    engaged with activity, gaze off-camera, natural pores, slight film grain,
+    28-50mm phone perspective
+  # Default gaze for IG + most home NSFW: candid / off-camera (not eye contact).
+  # Intentional selfie only when scene sets intentional_selfie: true (rare; Week1 OFF).
+  gaze_rule:
+    default: looking_away_candid
+    positive: >-
+      looking away from camera, candid, engaged with activity, gaze off-camera
+    negative: >-
+      looking at camera, eye contact with camera, staring at viewer, selfie pose
+    selfie_beats: rare_optional_default_off
+  # Prefer hiding hands/feet via composition. ADetailer/inpaint hands only when hands_hero.
+  hands_feet_rule:
+    default: hide_via_composition
+    hands_hero_default: false
+    week01_hands_hero: false
+    positive: >-
+      hands in pockets or holding cup or bag, hands cropped out of frame,
+      soft out-of-focus hands, feet out of frame or obscured
+    negative: >-
+      extra fingers, deformed hands, bad anatomy hands, bad anatomy feet,
+      bare feet close-up, detailed hands in foreground
+    hand_detailer_default: false
+    note: >-
+      FaceDetailer face ON; do NOT enable hand detailer/ADetailer by default.
+      Optional hand refine only when scene sets hands_hero: true (rare grip/workout).
+  # Soft preference for FUTURE runs (Week1 locked as-approved; do not regen Week1).
+  eyes_soft_preference:
+    code: eyes_slightly_larger_preferred
+    positive: >-
+      slightly larger eyes, subtle doe eyes, soft open eyes, photoreal
+    negative: >-
+      small eyes, squinting, beady eyes, anime eyes, exaggerated eyes, oversized eyes
+    note: >-
+      Gentle photoreal bias only — NOT anime, NOT exaggerated; keep realism.
+  platform_negative: >-
+    underage, teen, babyface, nude, explicit, nipples, genitals,
+    bad hands, extra fingers, deformed hands, bad anatomy hands, bad anatomy feet,
+    bare feet close-up, detailed hands in foreground,
+    distorted face, plastic skin, beauty filter, studio softbox,
+    model catalog pose, watermark, text, oversmooth skin,
+    extreme back of head only, unrecognizable face,
+    looking at camera, eye contact with camera, staring at viewer, selfie pose,
+    small eyes, squinting, beady eyes, anime eyes, exaggerated eyes
+  defaults:
+    lora_scale: 0.90
+    steps: 36
+    cfg: 4.2
+    size: "832x1216"
+    hands_hero: false
+
+presets:
+  # ---- fitness ----
+  gym_arrival:
+    pillar: fitness
+    track: ig_sfw
+    framing: environmental_medium_wide
+    hands_hero: false
+    scene_block: >-
+      arriving at busy public gym lobby, charcoal tote and water bottle,
+      black leggings and light hoodie, hands holding tote or in pockets,
+      other people blurred, flat facility light, imperfect crop,
+      subject 35-50% of frame, feet soft or cropped
+    hyperparams: {lora_scale: 0.90, steps: 36, cfg: 4.0}
+    hard_angle: false
+
+  locker_transition:
+    pillar: fitness
+    track: ig_sfw
+    framing: doorway_env
+    hands_hero: false
+    scene_block: >-
+      locker-area transition covered athletic wear, hoodie half on,
+      earbuds clipped or pocketed not detailed in hand, mirror edge only,
+      no tight face crop, public facility vibe, hands soft or cropped
+    hyperparams: {lora_scale: 0.90, steps: 34, cfg: 4.0}
+    hard_angle: false
+
+  strength_session:
+    pillar: fitness
+    track: ig_sfw
+    framing: three_quarter_env
+    hands_hero: false  # Week1 OFF; set true only for rare grip-hero beats
+    scene_block: >-
+      mid strength set with dumbbells, focused expression looking at weights or task
+      not at camera, gym racks in background, sweat optional, athletic tank,
+      environmental not body-part-first, gaze off-camera,
+      hands soft or partially obscured by angle (not hand close-up)
+    hyperparams: {lora_scale: 0.90, steps: 36, cfg: 4.0}
+    hard_angle: false
+
+  gym_mirror_3q:
+    pillar: fitness
+    track: ig_sfw
+    framing: three_quarter_mirror
+    intentional_selfie: true  # rare optional — Week1 default OFF; do not batch unless requested
+    scene_block: >-
+      OPTIONAL RARE selfie: gym mirror three-quarter, face clearly readable, phone visible,
+      ordinary gym lighting, no extreme wide-angle face warp — only when intentional_selfie beat approved
+    hyperparams: {lora_scale: 0.92, steps: 36, cfg: 4.2}
+    hard_angle: false
+    rarity: rare
+    notes: "아이덴티티 안정용 옵션. Week1 기본 배치에서 제외(시선=카메라 금지 규칙)."
+
+  pilates_studio:
+    pillar: fitness
+    track: ig_sfw
+    framing: full_or_3q_mat
+    scene_block: >-
+      reformer or mat pilates studio, controlled pose mid-move, soft daylight,
+      minimal branding, calm focus on form not camera, athletic set, gaze off-camera
+    hyperparams: {lora_scale: 0.90, steps: 36, cfg: 4.2}
+    hard_angle: false
+
+  mat_setup:
+    pillar: fitness
+    track: ig_sfw
+    framing: detail_plus_subject
+    hands_hero: false
+    scene_block: >-
+      rolling out yoga mat, strap and mat as story props, hands soft or cropped,
+      studio corner plant, morning light, preparation story
+    hyperparams: {lora_scale: 0.88, steps: 32, cfg: 4.0}
+    hard_angle: false
+
+  outdoor_run:
+    pillar: fitness
+    track: ig_sfw
+    framing: full_body_path
+    scene_block: >-
+      morning jog on tree-lined path, Toronto-ish park vibe, running jacket,
+      motion suggestion still photo, overcast soft light
+    hyperparams: {lora_scale: 0.90, steps: 34, cfg: 4.0}
+    hard_angle: false
+
+  waterfront_walk:
+    pillar: weekend_outdoors
+    track: ig_sfw
+    framing: full_body_landscape
+    scene_block: >-
+      waterfront promenade walk, wind in long hair, athleisure, lake horizon blur,
+      golden hour or soft overcast, fictional city waterfront
+    hyperparams: {lora_scale: 0.90, steps: 36, cfg: 4.0}
+    hard_angle: false
+
+  treadmill_indoor:
+    pillar: fitness
+    track: ig_sfw
+    framing: three_quarter_env
+    scene_block: >-
+      treadmill session indoor gym, winter swap for outdoor run, hoodie,
+      console partially visible, effort without grimace comedy
+    hyperparams: {lora_scale: 0.90, steps: 34, cfg: 4.0}
+    hard_angle: false
+
+  resistance_band_park:
+    pillar: fitness
+    track: ig_sfw
+    framing: full_env
+    scene_block: >-
+      resistance band warm-up in park, tote on bench, casual athletic,
+      passersby blurred, daytime
+    hyperparams: {lora_scale: 0.90, steps: 32, cfg: 4.0}
+    hard_angle: false
+
+  walk_commute:
+    pillar: fitness
+    track: ig_sfw
+    framing: walking_street
+    hands_hero: false
+    scene_block: >-
+      brisk city sidewalk walk, coffee cup or tote held (hands soft not hero),
+      crosswalk blur, layered spring/fall outfit, candid imperfect crop,
+      feet mid-stride or cropped
+    hyperparams: {lora_scale: 0.90, steps: 32, cfg: 4.0}
+    hard_angle: false
+
+  post_workout_stretch_home:
+    pillar: selfcare
+    track: ig_sfw
+    framing: medium_home
+    scene_block: >-
+      living room floor stretch after gym, hoodie and leggings, water bottle,
+      soft lamp light, covered SFW home
+    hyperparams: {lora_scale: 0.90, steps: 34, cfg: 4.2}
+    hard_angle: false
+
+  gentle_yoga_home:
+    pillar: fitness
+    track: ig_sfw
+    framing: full_home_env
+    scene_block: >-
+      gentle Sunday yoga at home, mat by window, loungewear SFW,
+      notebook with week plan nearby
+    hyperparams: {lora_scale: 0.90, steps: 34, cfg: 4.2}
+    hard_angle: false
+
+  week_plan_notebook:
+    pillar: selfcare
+    track: ig_sfw
+    framing: over_shoulder_desk
+    scene_block: >-
+      handwriting weekly workout plan, pen and tea, cozy desk, face three-quarter
+    hyperparams: {lora_scale: 0.88, steps: 32, cfg: 4.0}
+    hard_angle: false
+
+  hard_angle_back_of_head:
+    pillar: weekend_outdoors
+    track: ig_sfw
+    framing: rare_back_view
+    scene_block: >-
+      OPTIONAL RARE: walking away toward park trees, back of head and shoulders,
+      long dark hair, environmental story — identity fragile, use sparingly
+    hyperparams: {lora_scale: 0.95, steps: 40, cfg: 4.5}
+    hard_angle: true
+    rarity: rare
+    identity_risk: true
+    approval_gate: recommended
+
+  # ---- food ----
+  protein_lunch:
+    pillar: food
+    track: ig_sfw
+    framing: table_partial_subject
+    scene_block: >-
+      simple high-protein lunch bowl on cafe table, fork in hand,
+      Rina partially in frame, natural window light
+    hyperparams: {lora_scale: 0.88, steps: 32, cfg: 4.0}
+    hard_angle: false
+
+  meal_prep_detail:
+    pillar: food
+    track: ig_sfw
+    framing: kitchen_detail
+    hands_hero: false
+    scene_block: >-
+      glass containers meal prep on kitchen counter, containers as hero,
+      hands soft/cropped or holding container edge, casual home kitchen, no brand spam
+    hyperparams: {lora_scale: 0.85, steps: 30, cfg: 3.8}
+    hard_angle: false
+
+  post_lift_meal:
+    pillar: food
+    track: ig_sfw
+    framing: booth_3q
+    scene_block: >-
+      post-lift comforting meal, still in athleisure, warm interior,
+      satisfied calm expression
+    hyperparams: {lora_scale: 0.90, steps: 34, cfg: 4.0}
+    hard_angle: false
+
+  smoothie_bar:
+    pillar: food
+    track: ig_sfw
+    framing: counter_env
+    scene_block: >-
+      holding smoothie cup near bright counter, hair slightly messy post-gym,
+      candid phone photo
+    hyperparams: {lora_scale: 0.90, steps: 32, cfg: 4.0}
+    hard_angle: false
+
+  sunday_meal_prep:
+    pillar: food
+    track: ig_sfw
+    framing: kitchen_wide
+    scene_block: >-
+      Sunday meal prep montage still, apron optional, veggies and containers,
+      soft morning kitchen light
+    hyperparams: {lora_scale: 0.88, steps: 32, cfg: 4.0}
+    hard_angle: false
+
+  cozy_soup:
+    pillar: food
+    track: ig_sfw
+    framing: bowl_hero_partial
+    scene_block: >-
+      cozy soup bowl rainy-day vibe, sweater sleeves, steam, apartment table
+    hyperparams: {lora_scale: 0.88, steps: 32, cfg: 4.0}
+    hard_angle: false
+
+  market_brunch:
+    pillar: food
+    track: ig_sfw
+    framing: outdoor_table
+    scene_block: >-
+      weekend market brunch plate, tote beside chair, soft sun, casual dress or athleisure
+    hyperparams: {lora_scale: 0.90, steps: 34, cfg: 4.0}
+    hard_angle: false
+
+  farmers_market:
+    pillar: food
+    track: ig_sfw
+    framing: walking_stalls
+    scene_block: >-
+      farmers market stroll, produce bag, crowd blur, summer/fall seasonal produce
+    hyperparams: {lora_scale: 0.90, steps: 32, cfg: 4.0}
+    hard_angle: false
+
+  # ---- cafe ----
+  cafe_morning:
+    pillar: cafe
+    track: ig_sfw
+    framing: window_booth
+    scene_block: >-
+      morning cafe window seat, latte art optional, notebook open,
+      soft glam everyday, Toronto-ish interior without real chain claim
+    hyperparams: {lora_scale: 0.90, steps: 34, cfg: 4.2}
+    hard_angle: false
+
+  cafe_laptop:
+    pillar: cafe
+    track: ig_sfw
+    framing: medium_wide_booth
+    scene_block: >-
+      laptop focus session at cafe, looking at screen or coffee not camera,
+      iced coffee, headphones around neck, ambient clutter OK, gaze off-camera
+    hyperparams: {lora_scale: 0.90, steps: 34, cfg: 4.2}
+    hard_angle: false
+
+  iced_drink_window:
+    pillar: cafe
+    track: ig_sfw
+    framing: close_env_still_readable_face
+    scene_block: >-
+      iced drink by rainy window, reflection, contemplative three-quarter face
+    hyperparams: {lora_scale: 0.92, steps: 34, cfg: 4.2}
+    hard_angle: false
+
+  friday_treat_cafe:
+    pillar: cafe
+    track: ig_sfw
+    framing: pastry_table
+    scene_block: >-
+      Friday pastry treat with coffee, playful small smile, casual blazer over tank
+    hyperparams: {lora_scale: 0.90, steps: 32, cfg: 4.0}
+    hard_angle: false
+
+  pastry_detail:
+    pillar: cafe
+    track: ig_sfw
+    framing: detail
+    hands_hero: false
+    scene_block: >-
+      pastry and coffee detail, plate rim, soft bokeh; hands cropped or soft
+      out of focus (not finger hero)
+    hyperparams: {lora_scale: 0.85, steps: 30, cfg: 3.8}
+    hard_angle: false
+
+  # ---- errands ----
+  grocery_run:
+    pillar: errands
+    track: ig_sfw
+    framing: street_tote
+    scene_block: >-
+      grocery run with paper bags and tote, sidewalk trees, daylight,
+      practical outfit sneakers
+    hyperparams: {lora_scale: 0.90, steps: 32, cfg: 4.0}
+    hard_angle: false
+
+  pharmacy_errand:
+    pillar: errands
+    track: ig_sfw
+    framing: doorway_env
+    scene_block: >-
+      leaving pharmacy with small bag, city doorway, casual jacket,
+      errand story not product endorsement
+    hyperparams: {lora_scale: 0.90, steps: 32, cfg: 4.0}
+    hard_angle: false
+
+  # ---- selfcare SFW ----
+  skincare_vanity:
+    pillar: selfcare
+    track: ig_sfw
+    framing: vanity_medium
+    scene_block: >-
+      skincare vanity mirror, moisturizer jar, robe or hoodie SFW covered,
+      soft bathroom light, adult routine
+    hyperparams: {lora_scale: 0.90, steps: 36, cfg: 4.2}
+    hard_angle: false
+
+  foam_roll:
+    pillar: selfcare
+    track: ig_sfw
+    framing: floor_env
+    scene_block: >-
+      foam rolling on living room rug, athletic wear, TV soft glow optional
+    hyperparams: {lora_scale: 0.90, steps: 32, cfg: 4.0}
+    hard_angle: false
+
+  slow_morning_home_sfw:
+    pillar: selfcare
+    track: ig_sfw
+    framing: window_home
+    scene_block: >-
+      slow Sunday morning by apartment window, oversized sweater, tea mug,
+      peaceful SFW home
+    hyperparams: {lora_scale: 0.90, steps: 36, cfg: 4.2}
+    hard_angle: false
+
+  wind_down_sfw:
+    pillar: selfcare
+    track: ig_sfw
+    framing: couch_env
+    scene_block: >-
+      evening wind-down on couch with book, hoodie and socks, lamp light, SFW
+    hyperparams: {lora_scale: 0.90, steps: 34, cfg: 4.2}
+    hard_angle: false
+
+  early_lights_out_sfw:
+    pillar: selfcare
+    track: ig_sfw
+    framing: bedroom_doorway
+    scene_block: >-
+      bedroom doorway soft light, pajamas covered, phone face-down on nightstand,
+      sleep hygiene story SFW
+    hyperparams: {lora_scale: 0.90, steps: 34, cfg: 4.2}
+    hard_angle: false
+
+  # ---- friends fictional ----
+  dinner_with_friend_blurred:
+    pillar: friends_fictional
+    track: ig_sfw
+    framing: wide_table
+    scene_block: >-
+      dinner table for two, friend face blurred or cropped, Rina primary sharp,
+      warm restaurant light, fictional friend Maya
+    hyperparams: {lora_scale: 0.90, steps: 34, cfg: 4.0}
+    hard_angle: false
+
+  group_toast_env:
+    pillar: friends_fictional
+    track: ig_sfw
+    framing: wide_social
+    hands_hero: false
+    scene_block: >-
+      small group toast, glasses as props, faces of others soft/blurred,
+      Rina laughing lightly, hands soft/partially obscured, no alcohol brand push
+    hyperparams: {lora_scale: 0.90, steps: 34, cfg: 4.0}
+    hard_angle: false
+
+  sunset_with_friend_env:
+    pillar: friends_fictional
+    track: ig_sfw
+    framing: landscape_two
+    scene_block: >-
+      park sunset with friend silhouette beside, Rina three-quarter readable,
+      fictional Jordan running partner cool-down
+    hyperparams: {lora_scale: 0.90, steps: 36, cfg: 4.0}
+    hard_angle: false
+
+  movie_night_sfw:
+    pillar: friends_fictional
+    track: ig_sfw
+    framing: couch_wide
+    scene_block: >-
+      movie night snacks on coffee table, fairy lights, hoodie pile, SFW cozy
+    hyperparams: {lora_scale: 0.88, steps: 32, cfg: 4.0}
+    hard_angle: false
+
+  # ---- weekend outdoors ----
+  park_picnic:
+    pillar: weekend_outdoors
+    track: ig_sfw
+    framing: blanket_env
+    scene_block: >-
+      park picnic blanket, fruit container, book, summer light, casual sundress or athleisure
+    hyperparams: {lora_scale: 0.90, steps: 36, cfg: 4.0}
+    hard_angle: false
+
+  trail_hike:
+    pillar: weekend_outdoors
+    track: ig_sfw
+    framing: trail_full
+    scene_block: >-
+      forest trail hike, backpack, layered outdoor wear, dappled light,
+      Toronto-region trail vibe fictional
+    hyperparams: {lora_scale: 0.90, steps: 36, cfg: 4.0}
+    hard_angle: false
+
+  golden_hour_city:
+    pillar: weekend_outdoors
+    track: ig_sfw
+    framing: skyline_env
+    scene_block: >-
+      golden hour city overlook, windbreaker, skyline bokeh, reflective calm
+    hyperparams: {lora_scale: 0.90, steps: 36, cfg: 4.0}
+    hard_angle: false
+
+  rooftop_env_sfw:
+    pillar: weekend_outdoors
+    track: ig_sfw
+    framing: rooftop_wide
+    scene_block: >-
+      rooftop evening SFW, blazer and jeans, string lights distant, no lingerie
+    hyperparams: {lora_scale: 0.90, steps: 34, cfg: 4.2}
+    hard_angle: false
+
+  # ---- travel season ----
+  hotel_gym:
+    pillar: travel_season
+    track: ig_sfw
+    framing: small_gym_env
+    scene_block: >-
+      compact hotel gym session, suitcase visible at edge, same routine elsewhere story
+    hyperparams: {lora_scale: 0.90, steps: 36, cfg: 4.2}
+    hard_angle: false
+
+  suitcase_morning:
+    pillar: travel_season
+    track: ig_sfw
+    framing: room_door
+    scene_block: >-
+      open suitcase morning packing, sneakers on top, soft hotel-room light fictional
+    hyperparams: {lora_scale: 0.88, steps: 32, cfg: 4.0}
+    hard_angle: false
+
+  scenic_overlook:
+    pillar: travel_season
+    track: ig_sfw
+    framing: vista_full
+    scene_block: >-
+      scenic overlook still, windbreaker, hair in wind, face three-quarter readable
+    hyperparams: {lora_scale: 0.90, steps: 36, cfg: 4.0}
+    hard_angle: false
+
+  # ---- HOME MATURE (local only) ----
+  # Prompt blocks live in private/content/scene_presets_home_mature.yml (gitignored).
+  # Soft-merge via content.story_3year.load_overlays.load_scene_presets().

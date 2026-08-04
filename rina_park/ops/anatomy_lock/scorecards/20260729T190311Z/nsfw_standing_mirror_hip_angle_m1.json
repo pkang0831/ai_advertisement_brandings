@@ -1,0 +1,71 @@
+{
+  "image": "/Users/RBIPK031/ai_influencer/rina_park/private/nsfw_test/private_media/anatomy_lock/20260729T190311Z/nsfw_standing_mirror_hip_angle/m1_catalog.jpg",
+  "method": "1_pose_catalog",
+  "pose_id": "nsfw_standing_mirror_hip_angle",
+  "track": "nsfw_private",
+  "human_review": {
+    "hands": {
+      "score_0_to_2": null,
+      "notes": ""
+    },
+    "feet": {
+      "score_0_to_2": null,
+      "notes": ""
+    },
+    "genitals": {
+      "score_0_to_2": null,
+      "notes": "",
+      "na_if_sfw": false
+    },
+    "identity": {
+      "score_0_to_2": null,
+      "notes": ""
+    },
+    "overall_pass": null
+  },
+  "rubric": {
+    "0": "fail \u2014 mutated / unusable",
+    "1": "borderline \u2014 maybe salvage with refine",
+    "2": "pass \u2014 production-usable for region"
+  },
+  "auto_qc": {
+    "status": "complete",
+    "image": "/Users/RBIPK031/ai_influencer/rina_park/private/nsfw_test/private_media/anatomy_lock/20260729T190311Z/nsfw_standing_mirror_hip_angle/m1_catalog.jpg",
+    "track": "nsfw_private",
+    "identity": {
+      "pass": true,
+      "face_count": 1,
+      "blockers": []
+    },
+    "hands": {
+      "pass": true,
+      "count": 2,
+      "expected": 2,
+      "topology_flags": [],
+      "blockers": [],
+      "auto_score_proxy": 2
+    },
+    "feet": {
+      "pass": true,
+      "require": false,
+      "blockers": [],
+      "status": "estimated",
+      "ankles_visible": 0,
+      "mean_foot_visibility": 0.0871,
+      "feet_score_proxy": 0.218
+    },
+    "genitals": {
+      "pass": true,
+      "require": true,
+      "blockers": [],
+      "status": "proxy",
+      "mean": 161.75,
+      "std": 39.69,
+      "skinish": true,
+      "score_proxy": 1.5,
+      "note": "human genital anatomy review still required"
+    },
+    "overall_auto_pass": true,
+    "detector": "mediapipe-tasks-local-0.10.35"
+  }
+}

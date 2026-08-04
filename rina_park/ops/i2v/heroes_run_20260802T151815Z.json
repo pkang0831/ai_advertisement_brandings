@@ -1,0 +1,864 @@
+{
+  "run_id": "20260802T151815Z",
+  "elapsed_sec": 2453.7,
+  "gen_res": [
+    832,
+    1216
+  ],
+  "i2v_res": [
+    1080,
+    1920
+  ],
+  "width": 832,
+  "height": 1216,
+  "skip_face_detailer": true,
+  "upscale": true,
+  "poses": [
+    "hand_pockets_3q",
+    "hand_cropped_out",
+    "hand_resting_lap_seated",
+    "fitness_mat_soft_seated",
+    "foot_standing_flat_sneakers"
+  ],
+  "seeds_per_pose": 10,
+  "auto_pass_count": 22,
+  "total": 50,
+  "items": [
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s00_seed30072026.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s00_seed30072026_gen832x1216.jpg",
+      "seed": 30072026,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 64,
+      "identity": true,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s01_seed30072123.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s01_seed30072123_gen832x1216.jpg",
+      "seed": 30072123,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 64,
+      "identity": true,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s02_seed30072220.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s02_seed30072220_gen832x1216.jpg",
+      "seed": 30072220,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 64,
+      "identity": true,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s03_seed30072317.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s03_seed30072317_gen832x1216.jpg",
+      "seed": 30072317,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 64,
+      "identity": true,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s04_seed30072414.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s04_seed30072414_gen832x1216.jpg",
+      "seed": 30072414,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 64,
+      "identity": true,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s05_seed30072511.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s05_seed30072511_gen832x1216.jpg",
+      "seed": 30072511,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 64,
+      "identity": true,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s06_seed30072608.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s06_seed30072608_gen832x1216.jpg",
+      "seed": 30072608,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 64,
+      "identity": true,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s07_seed30072705.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s07_seed30072705_gen832x1216.jpg",
+      "seed": 30072705,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 64,
+      "identity": true,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s08_seed30072802.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s08_seed30072802_gen832x1216.jpg",
+      "seed": 30072802,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 64,
+      "identity": true,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s09_seed30072899.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_pockets_3q/s09_seed30072899_gen832x1216.jpg",
+      "seed": 30072899,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 64,
+      "identity": true,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "seed": 30073026,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "seed": 30073123,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_cropped_out/s02_seed30073220.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_cropped_out/s02_seed30073220_gen832x1216.jpg",
+      "seed": 30073220,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 70,
+      "identity": true,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_cropped_out/s03_seed30073317.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_cropped_out/s03_seed30073317_gen832x1216.jpg",
+      "seed": 30073317,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 70,
+      "identity": true,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_cropped_out/s04_seed30073414.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_cropped_out/s04_seed30073414_gen832x1216.jpg",
+      "seed": 30073414,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 70,
+      "identity": true,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_cropped_out/s05_seed30073511.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_cropped_out/s05_seed30073511_gen832x1216.jpg",
+      "seed": 30073511,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 70,
+      "identity": true,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_cropped_out/s06_seed30073608.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_cropped_out/s06_seed30073608_gen832x1216.jpg",
+      "seed": 30073608,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 70,
+      "identity": true,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_cropped_out/s07_seed30073705.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_cropped_out/s07_seed30073705_gen832x1216.jpg",
+      "seed": 30073705,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 70,
+      "identity": true,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_cropped_out/s08_seed30073802.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_cropped_out/s08_seed30073802_gen832x1216.jpg",
+      "seed": 30073802,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 70,
+      "identity": true,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_cropped_out/s09_seed30073899.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_cropped_out/s09_seed30073899_gen832x1216.jpg",
+      "seed": 30073899,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 70,
+      "identity": true,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_resting_lap_seated",
+      "seed": 30074026,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_resting_lap_seated",
+      "seed": 30074123,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_resting_lap_seated",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_resting_lap_seated/s02_seed30074220.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_resting_lap_seated/s02_seed30074220_gen832x1216.jpg",
+      "seed": 30074220,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 72,
+      "identity": true,
+      "hands": true,
+      "hand_count": 2,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_resting_lap_seated",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_resting_lap_seated/s03_seed30074317.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_resting_lap_seated/s03_seed30074317_gen832x1216.jpg",
+      "seed": 30074317,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 72,
+      "identity": true,
+      "hands": false,
+      "hand_count": 0,
+      "hero_gate_blockers": [
+        "hand_count_0_!=_expected_2",
+        "hands_topology_fail",
+        "expected_hands_not_detected"
+      ]
+    },
+    {
+      "pose_id": "hand_resting_lap_seated",
+      "seed": 30074414,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_resting_lap_seated",
+      "seed": 30074511,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_resting_lap_seated",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_resting_lap_seated/s06_seed30074608.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_resting_lap_seated/s06_seed30074608_gen832x1216.jpg",
+      "seed": 30074608,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 72,
+      "identity": true,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": [
+        "hand_count_1_!=_expected_2"
+      ]
+    },
+    {
+      "pose_id": "hand_resting_lap_seated",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_resting_lap_seated/s07_seed30074705.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/hand_resting_lap_seated/s07_seed30074705_gen832x1216.jpg",
+      "seed": 30074705,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 72,
+      "identity": true,
+      "hands": false,
+      "hand_count": 0,
+      "hero_gate_blockers": [
+        "hand_count_0_!=_expected_2",
+        "hands_topology_fail",
+        "expected_hands_not_detected"
+      ]
+    },
+    {
+      "pose_id": "hand_resting_lap_seated",
+      "seed": 30074802,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_resting_lap_seated",
+      "seed": 30074899,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "seed": 30075026,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "seed": 30075123,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/fitness_mat_soft_seated/s02_seed30075220.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/fitness_mat_soft_seated/s02_seed30075220_gen832x1216.jpg",
+      "seed": 30075220,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 67,
+      "identity": true,
+      "hands": false,
+      "hand_count": 0,
+      "hero_gate_blockers": [
+        "hand_count_0_!=_expected_2",
+        "hands_topology_fail",
+        "expected_hands_not_detected"
+      ]
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/fitness_mat_soft_seated/s03_seed30075317.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/fitness_mat_soft_seated/s03_seed30075317_gen832x1216.jpg",
+      "seed": 30075317,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 67,
+      "identity": true,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": [
+        "hand_count_1_!=_expected_2"
+      ]
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "seed": 30075414,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "seed": 30075511,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/fitness_mat_soft_seated/s06_seed30075608.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/fitness_mat_soft_seated/s06_seed30075608_gen832x1216.jpg",
+      "seed": 30075608,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 67,
+      "identity": true,
+      "hands": true,
+      "hand_count": 2,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/fitness_mat_soft_seated/s07_seed30075705.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/fitness_mat_soft_seated/s07_seed30075705_gen832x1216.jpg",
+      "seed": 30075705,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 67,
+      "identity": true,
+      "hands": false,
+      "hand_count": 0,
+      "hero_gate_blockers": [
+        "hand_count_0_!=_expected_2",
+        "hands_topology_fail",
+        "expected_hands_not_detected"
+      ]
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "seed": 30075802,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "fitness_mat_soft_seated",
+      "seed": 30075899,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "foot_standing_flat_sneakers",
+      "seed": 30076026,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "foot_standing_flat_sneakers",
+      "seed": 30076123,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "foot_standing_flat_sneakers",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/foot_standing_flat_sneakers/s02_seed30076220.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/foot_standing_flat_sneakers/s02_seed30076220_gen832x1216.jpg",
+      "seed": 30076220,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 71,
+      "identity": false,
+      "hands": true,
+      "hand_count": 2,
+      "hero_gate_blockers": [
+        "identity_fail",
+        "no_face_detected"
+      ]
+    },
+    {
+      "pose_id": "foot_standing_flat_sneakers",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/foot_standing_flat_sneakers/s03_seed30076317.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/foot_standing_flat_sneakers/s03_seed30076317_gen832x1216.jpg",
+      "seed": 30076317,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 71,
+      "identity": false,
+      "hands": true,
+      "hand_count": 2,
+      "hero_gate_blockers": [
+        "identity_fail",
+        "no_face_detected"
+      ]
+    },
+    {
+      "pose_id": "foot_standing_flat_sneakers",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/foot_standing_flat_sneakers/s04_seed30076414.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/foot_standing_flat_sneakers/s04_seed30076414_gen832x1216.jpg",
+      "seed": 30076414,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 71,
+      "identity": false,
+      "hands": true,
+      "hand_count": 2,
+      "hero_gate_blockers": [
+        "identity_fail",
+        "no_face_detected"
+      ]
+    },
+    {
+      "pose_id": "foot_standing_flat_sneakers",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/foot_standing_flat_sneakers/s05_seed30076511.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/foot_standing_flat_sneakers/s05_seed30076511_gen832x1216.jpg",
+      "seed": 30076511,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 71,
+      "identity": false,
+      "hands": true,
+      "hand_count": 2,
+      "hero_gate_blockers": [
+        "identity_fail",
+        "no_face_detected"
+      ]
+    },
+    {
+      "pose_id": "foot_standing_flat_sneakers",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/foot_standing_flat_sneakers/s06_seed30076608.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/foot_standing_flat_sneakers/s06_seed30076608_gen832x1216.jpg",
+      "seed": 30076608,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 71,
+      "identity": false,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": [
+        "identity_fail",
+        "no_face_detected"
+      ]
+    },
+    {
+      "pose_id": "foot_standing_flat_sneakers",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/foot_standing_flat_sneakers/s07_seed30076705.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/foot_standing_flat_sneakers/s07_seed30076705_gen832x1216.jpg",
+      "seed": 30076705,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 71,
+      "identity": false,
+      "hands": true,
+      "hand_count": 2,
+      "hero_gate_blockers": [
+        "identity_fail",
+        "no_face_detected"
+      ]
+    },
+    {
+      "pose_id": "foot_standing_flat_sneakers",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/foot_standing_flat_sneakers/s08_seed30076802.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/foot_standing_flat_sneakers/s08_seed30076802_gen832x1216.jpg",
+      "seed": 30076802,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 71,
+      "identity": true,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "foot_standing_flat_sneakers",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/foot_standing_flat_sneakers/s09_seed30076899.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z/foot_standing_flat_sneakers/s09_seed30076899_gen832x1216.jpg",
+      "seed": 30076899,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 71,
+      "identity": true,
+      "hands": true,
+      "hand_count": 2,
+      "hero_gate_blockers": []
+    }
+  ],
+  "output_dir": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T151815Z",
+  "still_gate": "/Users/RBIPK031/ai_influencer/rina_park/ops/i2v/STILL_GATE.md",
+  "note": "auto_pass \u2260 promote; human QC required before current/",
+  "promote_hint": "PYTHONPATH=rina_park .venv/bin/python rina_park/scripts/promote_i2v_heroes.py --run-id 20260802T151815Z --pick pose_id:sXX"
+}

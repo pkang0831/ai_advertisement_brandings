@@ -1,0 +1,243 @@
+{
+  "run_id": "20260730T201254Z",
+  "elapsed_sec": 1972.5,
+  "gen_res": [
+    832,
+    1216
+  ],
+  "i2v_res": [
+    1080,
+    1920
+  ],
+  "width": 832,
+  "height": 1216,
+  "skip_face_detailer": false,
+  "upscale": true,
+  "poses": [
+    "hand_pockets_3q",
+    "hand_cropped_out"
+  ],
+  "seeds_per_pose": 8,
+  "auto_pass_count": 6,
+  "total": 16,
+  "items": [
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z/hand_pockets_3q/s00_seed30072026.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z/hand_pockets_3q/s00_seed30072026_gen832x1216.jpg",
+      "seed": 30072026,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 56,
+      "identity": true,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "seed": 30072123,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z/hand_pockets_3q/s02_seed30072220.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z/hand_pockets_3q/s02_seed30072220_gen832x1216.jpg",
+      "seed": 30072220,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 56,
+      "identity": false,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": [
+        "identity_fail",
+        "no_face_detected"
+      ]
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "seed": 30072317,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z/hand_pockets_3q/s04_seed30072414.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z/hand_pockets_3q/s04_seed30072414_gen832x1216.jpg",
+      "seed": 30072414,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 56,
+      "identity": true,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "seed": 30072511,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z/hand_pockets_3q/s06_seed30072608.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z/hand_pockets_3q/s06_seed30072608_gen832x1216.jpg",
+      "seed": 30072608,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 56,
+      "identity": true,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_pockets_3q",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z/hand_pockets_3q/s07_seed30072705.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z/hand_pockets_3q/s07_seed30072705_gen832x1216.jpg",
+      "seed": 30072705,
+      "auto_pass": false,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 56,
+      "identity": false,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": [
+        "identity_fail",
+        "no_face_detected"
+      ]
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "seed": 30073026,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "seed": 30073123,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z/hand_cropped_out/s02_seed30073220.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z/hand_cropped_out/s02_seed30073220_gen832x1216.jpg",
+      "seed": 30073220,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 62,
+      "identity": true,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "seed": 30073317,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z/hand_cropped_out/s04_seed30073414.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z/hand_cropped_out/s04_seed30073414_gen832x1216.jpg",
+      "seed": 30073414,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 62,
+      "identity": true,
+      "hands": true,
+      "hand_count": 1,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "seed": 30073511,
+      "error": "RuntimeError: black frame mean=0.0"
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z/hand_cropped_out/s06_seed30073608.jpg",
+      "native_path": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z/hand_cropped_out/s06_seed30073608_gen832x1216.jpg",
+      "seed": 30073608,
+      "auto_pass": true,
+      "res_ok": true,
+      "gen_res": [
+        832,
+        1216
+      ],
+      "i2v_res": [
+        1080,
+        1920
+      ],
+      "clip_token_count": 62,
+      "identity": true,
+      "hands": true,
+      "hand_count": 0,
+      "hero_gate_blockers": []
+    },
+    {
+      "pose_id": "hand_cropped_out",
+      "seed": 30073705,
+      "error": "RuntimeError: black frame mean=0.0"
+    }
+  ],
+  "output_dir": "/Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260730T201254Z",
+  "still_gate": "/Users/RBIPK031/ai_influencer/rina_park/ops/i2v/STILL_GATE.md",
+  "note": "auto_pass \u2260 promote; human QC required before current/",
+  "promote_hint": "PYTHONPATH=rina_park .venv/bin/python rina_park/scripts/promote_i2v_heroes.py --run-id 20260730T201254Z --pick pose_id:sXX"
+}

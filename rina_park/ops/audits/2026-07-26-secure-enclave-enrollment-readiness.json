@@ -1,0 +1,44 @@
+{
+  "observed_at": "2026-07-26T17:31:56Z",
+  "enrollment": {
+    "keychain_account": "production-p256-v1",
+    "keychain_created_at": "2026-07-26T17:29:53Z",
+    "keychain_metadata_present": true,
+    "keychain_service": "com.devenira.rina.promotion.secure-enclave",
+    "secure_enclave_available": true,
+    "user_presence_policy": "SecAccessControl.userPresence"
+  },
+  "high_finding": {
+    "closed": false,
+    "remaining_evidence": "one explicit user-presence signature verified by the enrolled production public key",
+    "status": "mitigated; enrollment ready; live key-pair proof pending"
+  },
+  "production_public_key": {
+    "curve": "P-256",
+    "fingerprint_sha256": "f0eaebaac3da75a4cce5fa711d3b40651951ec77f598154920b4cfa53f62d558",
+    "format": "PEM SubjectPublicKeyInfo",
+    "mode": "0644",
+    "owner": "RBIPK031",
+    "owner_is_current_user": true,
+    "path": "rina_park/ops/attestation/trusted_public_key.pem",
+    "valid": true
+  },
+  "readiness": {
+    "key_pair_match_verified": false,
+    "live_signed_attestation_required": true,
+    "non_signing_probe": true,
+    "package_publish_ready_without_attestation": false,
+    "production_promotion_allowed": true,
+    "reason": "opaque key-handle access is authorization-gated; exact pairing awaits the explicit live signature rehearsal",
+    "signer_ready": true,
+    "verifier_ready": true
+  },
+  "safety": {
+    "account_accessed": false,
+    "production_attestation_consumed": false,
+    "production_attestation_created": false,
+    "publish_attempted": false,
+    "signature_created": false,
+    "test_key_used_in_production_path": false
+  }
+}

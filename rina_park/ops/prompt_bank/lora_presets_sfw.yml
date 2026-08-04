@@ -1,0 +1,8 @@
+# SFW character LoRA weight presets. Keep small (1–3) — MPS reload cost.
+version: "1.1.0"
+updated: "2026-08-02"
+track: sfw
+axis: lora_presets
+items:
+  - name: char_080
+    weight: 0.80

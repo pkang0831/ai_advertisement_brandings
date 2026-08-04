@@ -1,0 +1,41 @@
+# LEGACY — prefer backgrounds_sfw.yml (cartesian background axis).
+# Kept as fallback if backgrounds_sfw.yml is missing.
+version: "1.0.0"
+updated: "2026-08-02"
+track: sfw
+items:
+  - soft morning sidewalk light
+  - golden hour street walk
+  - cafe window soft daylight
+  - rainy sidewalk reflections
+  - autumn leaves park path
+  - spring blossom sidewalk
+  - snowy quiet street dusk
+  - sunlit apartment lounge
+  - kitchen morning coffee light
+  - home yoga studio bright
+  - gym mirror soft daylight
+  - rooftop golden hour breeze
+  - subway platform soft blur
+  - bookstore aisle warm light
+  - flower market street stall
+  - riverside boardwalk afternoon
+  - hotel lobby soft luxury
+  - airport lounge candid
+  - balcony city skyline dusk
+  - library reading nook soft
+  - museum gallery soft light
+  - coastal boardwalk breeze
+  - mountain trail soft mist
+  - farmer market morning
+  - neon street night soft
+  - office glass corridor day
+  - coworking window seat
+  - laundry room soft candid
+  - elevator mirror soft glam
+  - parking garage soft contrast
+  - park bench afternoon shade
+  - bridge walk city view
+  - tram stop soft overcast
+  - courtyard fountain soft
+  - greenhouse soft green light

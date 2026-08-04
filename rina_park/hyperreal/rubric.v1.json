@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "rubric_id": "phase0-foundation-realism-v1",
+  "instructions": "Score blind at 100% view and fit-to-screen. Model identity must remain hidden until all sheets are locked.",
+  "threshold": {
+    "minimum_total": 85,
+    "critical_defect_allowed": false,
+    "rule": "Pass only when total is at least 85 and no critical defect is present."
+  },
+  "categories": [
+    {
+      "id": "anatomy",
+      "label": "Anatomy",
+      "weight": 25,
+      "anchors": "Body proportions, joints, hands, face, teeth, contact and occlusion."
+    },
+    {
+      "id": "lighting_reflection",
+      "label": "Lighting and reflection",
+      "weight": 20,
+      "anchors": "Key/fill direction, cast shadows, catchlights, water and mirror reflections."
+    },
+    {
+      "id": "lens_dof_motion",
+      "label": "Lens, depth of field and motion",
+      "weight": 15,
+      "anchors": "Perspective, focal-length behavior, focus plane, bokeh and motion integration."
+    },
+    {
+      "id": "skin_fabric_water",
+      "label": "Skin, fabric and water",
+      "weight": 10,
+      "anchors": "Pores without plastic texture, fabric construction, wet/dry boundaries and water interaction."
+    },
+    {
+      "id": "sensor_color_compression",
+      "label": "Sensor, color and compression",
+      "weight": 10,
+      "anchors": "Plausible noise, white balance, highlight roll-off, color response and single-generation compression."
+    },
+    {
+      "id": "background",
+      "label": "Background",
+      "weight": 10,
+      "anchors": "Architecture, repeated objects, people, text-like artifacts, perspective and continuity."
+    },
+    {
+      "id": "candid_composition",
+      "label": "Candid composition",
+      "weight": 10,
+      "anchors": "Requested occupancy and bbox, natural timing, gaze, imperfect framing and scene readability."
+    }
+  ],
+  "critical_defects": [
+    "extra or missing body part",
+    "severe hand, eye, teeth or joint failure",
+    "physically impossible contact, shadow or reflection",
+    "copied moodboard pixels or recognizable source person",
+    "legible unintended text, logo or watermark",
+    "identity conditioning or named-character leakage",
+    "wrong camera hypothesis or unsafe wardrobe"
+  ],
+  "scoring_anchors": {
+    "1.0": "No material defect visible.",
+    "0.8": "Minor defect visible on inspection but image remains believable.",
+    "0.6": "Noticeable defect weakens realism.",
+    "0.4": "Major defect is immediately distracting.",
+    "0.0": "Category fails or contains a critical defect."
+  },
+  "calibration": {
+    "reference_distribution_plan": [
+      "Collect a small licensed or self-shot set of 24 to 40 real photographs spanning the six camera hypotheses.",
+      "Record only observable distributions: subject occupancy, focal-length class, horizon roll, luminance percentiles, blur proxy, noise proxy and color-temperature band.",
+      "Reserve eight images as reviewer calibration anchors; never use them as generation conditioning.",
+      "Have two reviewers independently score mixed real anchors and synthetic pilots, discuss disagreements above 10 points, then lock anchors before the bake-off.",
+      "Compare synthetic metrics to broad reference quantiles rather than tuning toward any detector score."
+    ],
+    "prohibited": [
+      "falsifying EXIF",
+      "claiming generated media is camera-original",
+      "optimizing for detector evasion",
+      "copying reference pixels or identifiable people"
+    ]
+  }
+}

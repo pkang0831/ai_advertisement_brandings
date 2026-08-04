@@ -1,0 +1,7 @@
+# Auto-updated by promote_i2v_heroes.py
+# run_id: 20260802T145425Z
+heroes:
+  - pose_id: hand_pockets_3q
+    still: /Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/current/hand_pockets_3q.jpg
+    source: /Users/RBIPK031/ai_influencer/rina_park/out/i2v_heroes/20260802T145425Z/hand_pockets_3q/s00_seed30072026.jpg
+    motion_prompt: A1  # see MOTION_PROMPTS.md

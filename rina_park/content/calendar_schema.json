@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rina Park eight-week seed calendar row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "post_id",
+    "platform",
+    "audience_tiers",
+    "format",
+    "story_week",
+    "publish_at_local",
+    "publish_at_utc",
+    "title",
+    "body",
+    "cta",
+    "alt_text",
+    "hashtags",
+    "location_label",
+    "asset_ids",
+    "disclosure",
+    "content_approval",
+    "schedule_approval",
+    "status",
+    "published_url"
+  ],
+  "properties": {
+    "post_id": {"type": "string", "minLength": 1},
+    "platform": {"enum": ["instagram", "patreon"]},
+    "audience_tiers": {"enum": ["[public]", "[A,B,C]", "[B,C]", "[C]"]},
+    "format": {
+      "enum": [
+        "carousel",
+        "reel",
+        "gallery_4_short_note",
+        "gallery_6_alternate_editorial",
+        "gallery_8_notes_archive"
+      ]
+    },
+    "story_week": {"type": "integer", "minimum": 1, "maximum": 8},
+    "publish_at_local": {"type": "string", "format": "date-time"},
+    "publish_at_utc": {"type": "string", "format": "date-time"},
+    "title": {"type": "string", "minLength": 1},
+    "body": {"type": "string", "minLength": 1},
+    "cta": {"type": "string", "minLength": 1},
+    "alt_text": {"type": "string", "minLength": 1},
+    "hashtags": {"type": "string"},
+    "location_label": {"type": "string"},
+    "asset_ids": {"const": "[]"},
+    "disclosure": {
+      "const": "Rina is a fictional virtual character. Visuals are AI-generated."
+    },
+    "content_approval": {"const": "pending"},
+    "schedule_approval": {"const": "pending"},
+    "status": {"const": "draft"},
+    "published_url": {"const": ""}
+  }
+}

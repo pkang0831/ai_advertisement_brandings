@@ -1,0 +1,21 @@
+{
+  "decision_id": "public_ai_virtual_character_disclosure_wording",
+  "candidate_ids": [
+    "disclosure_a",
+    "disclosure_b",
+    "disclosure_c"
+  ],
+  "selected": null,
+  "approved_by_user": false,
+  "status": "user_decision_required",
+  "release_gate": "blocked",
+  "auto_apply": false,
+  "candidate_source": "disclosure_candidates.md",
+  "account_readiness_reference": {
+    "path": "../account_setup.md",
+    "section": "Shared safety gate",
+    "relationship": "This wording decision must be user-approved before launch-copy account readiness can pass.",
+    "readiness_state": "blocked_pending_user_disclosure_decision",
+    "contains_or_requires_secrets": false
+  }
+}

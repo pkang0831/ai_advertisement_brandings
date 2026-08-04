@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "instagram_api_version": "v24.0",
+  "instagram": {
+    "image": {
+      "extensions": [".jpg", ".jpeg"],
+      "mime_types": ["image/jpeg"],
+      "min_width": 320,
+      "max_width": 1440,
+      "aspect_ratio_min": 0.8,
+      "aspect_ratio_max": 1.91,
+      "max_bytes": 8388608
+    },
+    "reel": {
+      "extensions": [".mp4"],
+      "mime_types": ["video/mp4"],
+      "codecs": ["h264"],
+      "audio_codecs": ["aac", "none"],
+      "min_fps": 23,
+      "max_fps": 60,
+      "min_duration_seconds": 3,
+      "max_duration_seconds": 90,
+      "aspect_ratio_min": 0.555,
+      "aspect_ratio_max": 0.563,
+      "max_bytes": 1073741824
+    },
+    "carousel": {"min_items": 2, "max_items": 10},
+    "location_api": false,
+    "ai_label": true
+  },
+  "patreon": {
+    "mode": "manual_official_web",
+    "browser_automation": false,
+    "location_api": false,
+    "image": {
+      "extensions": [".jpg", ".jpeg", ".png", ".webp"],
+      "mime_types": ["image/jpeg", "image/png", "image/webp"],
+      "min_width": 320,
+      "max_bytes": 16777216
+    },
+    "video": {
+      "extensions": [".mp4"],
+      "mime_types": ["video/mp4"],
+      "codecs": ["h264"],
+      "max_bytes": 5368709120
+    }
+  }
+}

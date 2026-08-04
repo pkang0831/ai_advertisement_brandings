@@ -1,0 +1,85 @@
+{
+  "schema_version": 2,
+  "timezone": "America/Toronto",
+  "launch": {
+    "policy": "next_monday_after_all_gates_pass",
+    "quality_and_readiness_gates_passed": false,
+    "gates_passed_on": null,
+    "release_candidate_finalized": false,
+    "resolved_launch_date": null
+  },
+  "public_ai_disclosure": {
+    "status": "undecided",
+    "instagram": {
+      "present": null,
+      "wording": null
+    },
+    "patreon": {
+      "present": null,
+      "wording": null
+    }
+  },
+  "instagram": {
+    "public_handle": "FILL_INSTAGRAM_HANDLE",
+    "public_profile_url": "FILL_INSTAGRAM_PROFILE_URL",
+    "account_type": "creator",
+    "professional_status_confirmed": false,
+    "is_public": false,
+    "two_factor_enabled": false
+  },
+  "patreon": {
+    "public_handle": "FILL_PATREON_HANDLE",
+    "public_page_url": "FILL_PATREON_PROFILE_URL",
+    "safe_for_all_audiences": false,
+    "two_factor_enabled": false,
+    "legal_identity_completed_with_real_owner_info": false,
+    "payout_setup_complete": false,
+    "tax_setup_complete": false,
+    "currency": "CAD",
+    "tiers": [
+      {
+        "code": "A",
+        "id": "FILL_TIER_A_ID",
+        "name": "Poolside Notes",
+        "monthly_price_cad": 3,
+        "audience_includes_tier_ids": ["FILL_TIER_A_ID", "FILL_TIER_B_ID", "FILL_TIER_C_ID"]
+      },
+      {
+        "code": "B",
+        "id": "FILL_TIER_B_ID",
+        "name": "Extended Cut",
+        "monthly_price_cad": 8,
+        "audience_includes_tier_ids": ["FILL_TIER_B_ID", "FILL_TIER_C_ID"]
+      },
+      {
+        "code": "C",
+        "id": "FILL_TIER_C_ID",
+        "name": "Season Archive",
+        "monthly_price_cad": 15,
+        "audience_includes_tier_ids": ["FILL_TIER_C_ID"]
+      }
+    ]
+  },
+  "link_routing": {
+    "instagram_to_patreon_url": "FILL_PATREON_PROFILE_URL",
+    "patreon_to_instagram_url": "FILL_INSTAGRAM_PROFILE_URL",
+    "canonical_landing_url": null
+  },
+  "graph_api_optional": {
+    "intended": false,
+    "meta_app_created": false,
+    "instagram_login_product_configured": false,
+    "account_added_as_app_tester": false,
+    "tester_invitation_accepted": false,
+    "permissions": [
+      "instagram_business_basic",
+      "instagram_business_content_publish"
+    ],
+    "token_available_in_external_secret_store": false,
+    "token_expires_on": null,
+    "public_https_media_transport_ready": false,
+    "publishing_limit_probe_passed": false,
+    "mocked_reconciliation_tests_passed": false,
+    "dedicated_test_account_rehearsal_passed": false
+  }
+}

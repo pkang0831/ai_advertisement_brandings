@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://devenira.local/schemas/hyperreal-phase0-sidecar-v1.json",
+  "title": "Phase-0 Hyperreal Output Private Sidecar",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "experiment_id",
+    "blind_id",
+    "hypothesis_id",
+    "model_id",
+    "seed",
+    "prompt",
+    "camera_hypothesis",
+    "output",
+    "timing",
+    "memory",
+    "adapter_metadata",
+    "publication_allowed",
+    "published",
+    "prescreen"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "experiment_id": {"type": "string", "minLength": 1},
+    "blind_id": {"type": "string", "pattern": "^H0[1-6]_[AB]$"},
+    "hypothesis_id": {"type": "string", "pattern": "^H0[1-6]$"},
+    "model_id": {
+      "type": "string",
+      "enum": ["qwen_image_2512", "z_image"]
+    },
+    "seed": {"type": "integer", "minimum": 0},
+    "prompt": {"type": "string", "minLength": 40},
+    "camera_hypothesis": {
+      "type": "object",
+      "required": [
+        "camera_type",
+        "equivalent_focal_length_mm",
+        "camera_height_m",
+        "camera_distance_m",
+        "orientation",
+        "subject_bbox_xywh_normalized",
+        "subject_occupancy_percent",
+        "action",
+        "gaze_expression",
+        "lighting",
+        "material_state",
+        "background_graph",
+        "wardrobe_sfw",
+        "deliberate_imperfections",
+        "prompt"
+      ]
+    },
+    "output": {
+      "type": "object",
+      "required": ["path", "dimensions", "format"],
+      "properties": {
+        "path": {"type": "string"},
+        "dimensions": {
+          "type": "array",
+          "prefixItems": [{"type": "integer"}, {"type": "integer"}],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "format": {"const": "png"}
+      }
+    },
+    "timing": {
+      "type": "object",
+      "required": ["started_at_utc", "generation_seconds"]
+    },
+    "memory": {
+      "type": "object",
+      "required": ["before", "after"]
+    },
+    "adapter_metadata": {"type": "object"},
+    "publication_allowed": {"const": false},
+    "published": {"const": false},
+    "prescreen": {
+      "type": "object",
+      "required": ["passed", "critical_failures", "copy_safeguards"]
+    }
+  }
+}

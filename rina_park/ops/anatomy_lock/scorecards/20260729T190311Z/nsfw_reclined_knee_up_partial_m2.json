@@ -1,0 +1,75 @@
+{
+  "image": "/Users/RBIPK031/ai_influencer/rina_park/private/nsfw_test/private_media/anatomy_lock/20260729T190311Z/nsfw_reclined_knee_up_partial/m2_2pass.jpg",
+  "method": "2_dedicated_2pass",
+  "pose_id": "nsfw_reclined_knee_up_partial",
+  "track": "nsfw_private",
+  "human_review": {
+    "hands": {
+      "score_0_to_2": null,
+      "notes": ""
+    },
+    "feet": {
+      "score_0_to_2": null,
+      "notes": ""
+    },
+    "genitals": {
+      "score_0_to_2": null,
+      "notes": "",
+      "na_if_sfw": false
+    },
+    "identity": {
+      "score_0_to_2": null,
+      "notes": ""
+    },
+    "overall_pass": null
+  },
+  "rubric": {
+    "0": "fail \u2014 mutated / unusable",
+    "1": "borderline \u2014 maybe salvage with refine",
+    "2": "pass \u2014 production-usable for region"
+  },
+  "auto_qc": {
+    "status": "complete",
+    "image": "/Users/RBIPK031/ai_influencer/rina_park/private/nsfw_test/private_media/anatomy_lock/20260729T190311Z/nsfw_reclined_knee_up_partial/m2_2pass.jpg",
+    "track": "nsfw_private",
+    "identity": {
+      "pass": false,
+      "face_count": 0,
+      "blockers": [
+        "no_face_detected"
+      ]
+    },
+    "hands": {
+      "pass": false,
+      "count": 0,
+      "expected": 1,
+      "topology_flags": [],
+      "blockers": [
+        "expected_hands_not_detected"
+      ],
+      "auto_score_proxy": 0
+    },
+    "feet": {
+      "pass": true,
+      "require": false,
+      "blockers": [],
+      "status": "estimated",
+      "ankles_visible": 0,
+      "mean_foot_visibility": 0.2003,
+      "feet_score_proxy": 0.501
+    },
+    "genitals": {
+      "pass": true,
+      "require": true,
+      "blockers": [],
+      "status": "proxy",
+      "mean": 104.79,
+      "std": 67.09,
+      "skinish": true,
+      "score_proxy": 1.5,
+      "note": "human genital anatomy review still required"
+    },
+    "overall_auto_pass": false,
+    "detector": "mediapipe-tasks-local-0.10.35"
+  }
+}
