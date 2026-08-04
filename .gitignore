@@ -1,17 +1,28 @@
 # Secrets
 .env
+.envrc
 **/.env
 *.partial
+.streamlit/secrets.toml
+.pypirc
 
 # Python / venv
 .venv/
 venv/
+env/
+ENV/
 **/__pycache__/
 *.py[cod]
+*$py.class
+*.so
 *.egg-info/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.ipynb_checkpoints/
+.pdm-python
+.pdm-build/
+.pixi/
 
 # OS / IDE
 .DS_Store
@@ -83,8 +94,7 @@ rina_park/vendor/
 *.flac
 *.m4a
 
-# Keep sidecar JSON next to ignored media if needed is fine as code;
-# ignore large notebook dumps with embeds at repo root
+# Large notebook dump with embeds at repo root
 devenira_sdxl_colab_txt2img.ipynb
 
 # Desktop / external model links
