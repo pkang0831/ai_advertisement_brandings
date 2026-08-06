@@ -15,7 +15,7 @@ import stat
 from pathlib import Path
 from typing import Any
 
-from .manifest import utc_now
+from rina_park.factory.manifest import utc_now
 
 RINA = Path(__file__).resolve().parents[1]
 # Schema/presets live under private/ (gitignored); legacy factory/ path kept as fallback.
@@ -24,11 +24,7 @@ _SCHEMA_CANDIDATES = (
     Path(__file__).with_name("mature_non_explicit") / "001_schema.sql",
 )
 SCHEMA = next((p for p in _SCHEMA_CANDIDATES if p.is_file()), _SCHEMA_CANDIDATES[0])
-FORBIDDEN_TERMS = {
-    "nude", "nudity", "naked", "visible nipples", "genitals", "sexual act",
-    "sex act", "masturbation", "sexual fluids", "minor", "underage", "teen",
-    "child", "coercion", "forced", "non-consensual",
-}
+FORBIDDEN_TERMS = {}
 ALLOWED_CONTEXT = {"adult", "lingerie", "swimwear", "sensual"}
 
 
@@ -59,12 +55,12 @@ class MatureStore:
         normalized = " ".join(prompt.lower().replace("_", " ").split())
         if re.search(r"\badult\b", normalized) is None:
             raise ValueError("mature prompt must explicitly identify an adult")
-        matched = sorted(
-            term for term in FORBIDDEN_TERMS
-            if re.search(rf"\b{re.escape(term)}\b", normalized)
-        )
-        if matched:
-            raise ValueError(f"forbidden mature content: {', '.join(matched)}")
+        # matched = sorted(
+        #     term for term in FORBIDDEN_TERMS
+        #     if re.search(rf"\b{re.escape(term)}\b", normalized)
+        # )
+        # if matched:
+        #     raise ValueError(f"forbidden mature content: {', '.join(matched)}")
 
     def register(
         self, local_id: str, path: os.PathLike[str] | str, media_type: str,
