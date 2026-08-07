@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+import sys
 import warnings
 from pathlib import Path
 
@@ -10,6 +11,9 @@ import numpy as np
 
 
 RINA_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(RINA_ROOT.parent))
+from rina_park.runtime_device import get_torch_device_str  # noqa: E402
+
 LPIPS_ROOT = RINA_ROOT / "models/lpips/official-0.1.4"
 LPIPS_LINEAR_PATH = LPIPS_ROOT / "alex-v0.1.pth"
 ALEXNET_PATH = LPIPS_ROOT / "alexnet-owt-7be5be79.pth"
@@ -34,8 +38,8 @@ class OfflineAlexLpips:
         from torchvision.models import alexnet
 
         device = (
-            torch.device("mps")
-            if torch.backends.mps.is_available() and torch.backends.mps.is_built()
+            torch.device(get_torch_device_str())
+            if get_torch_device_str() != "cpu"
             else torch.device("cpu")
         )
         trunk = alexnet(weights=None)
@@ -103,7 +107,9 @@ class OfflineAlexLpips:
         second = self._tensor(after)
         with self._torch.inference_mode():
             value = self._model(first, second, normalize=True)
-            if self._device.type == "mps":
+            if self._device.type == "cuda":
+                self._torch.cuda.synchronize()
+            elif self._device.type == "mps":
                 self._torch.mps.synchronize()
         # Official linear LPIPS heads can produce tiny negative floating-point
         # values around identical inputs; perceptual distance is reported as zero.

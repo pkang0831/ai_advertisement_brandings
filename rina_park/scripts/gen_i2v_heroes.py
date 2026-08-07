@@ -29,8 +29,10 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
 RINA = ROOT / "rina_park"
+sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(RINA))
 
+from rina_park.runtime_device import empty_cache  # noqa: E402
 from hyperreal.anatomy.pass2_inpaint import detect_hand_boxes
 from hyperreal.anatomy.pose_catalog import PoseEntry, load_pose_catalog
 from hyperreal.anatomy.qc_gates import evaluate_anatomy_image
@@ -130,12 +132,7 @@ def _run_id() -> str:
 
 
 def _mps_cleanup() -> None:
-    import gc
-
-    gc.collect()
-    if torch.backends.mps.is_available():
-        torch.mps.empty_cache()
-        torch.mps.synchronize()
+    empty_cache()
 
 
 def _needs_hand_lora(pose: PoseEntry) -> bool:

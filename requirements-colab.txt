@@ -1,0 +1,16 @@
+# Google Colab CUDA inference pins (no mlx-gen).
+# Install: pip install -r requirements-colab.txt
+pillow==10.4.0
+diffusers==0.31.0
+transformers==4.44.2
+accelerate==0.34.2
+huggingface_hub==0.25.2
+safetensors==0.4.5
+peft==0.12.0
+pyyaml==6.0.2
+numpy==1.26.4
+pandas==2.2.2
+omegaconf==2.3.0
+einops==0.8.0
+sentencepiece==0.2.0
+protobuf==5.28.2

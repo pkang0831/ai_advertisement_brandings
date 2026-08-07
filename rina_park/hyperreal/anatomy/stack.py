@@ -1,8 +1,8 @@
-"""Shared RealVisXL + Rina person LoRA stack for anatomy-lock runs (MPS)."""
+"""Shared RealVisXL + Rina person LoRA stack for anatomy-lock runs (CUDA/MPS)."""
 
 from __future__ import annotations
 
-import gc
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Sequence
@@ -17,6 +17,9 @@ from diffusers import (
 )
 
 RINA = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(RINA.parent))
+from rina_park.runtime_device import empty_cache, get_torch_device_str, require_accelerator  # noqa: E402
+
 MODEL = RINA / "models" / "checkpoints" / "RealVisXL_V5.0_fp16.safetensors"
 LORA_DIR = RINA / "models" / "loras"
 PERSON_LORA = LORA_DIR / "rina_park_person_sdxl_lora.safetensors"
@@ -123,11 +126,11 @@ def apply_lora_stack(
 def load_txt2img(
     *,
     lora_scale: float = 0.90,
-    device: str = "mps",
+    device: str | None = None,
     extra_loras: Sequence[ExtraLora] = (),
 ) -> StableDiffusionXLPipeline:
     assert MODEL.exists(), MODEL
-    assert torch.backends.mps.is_available(), "MPS required"
+    device = device or require_accelerator()
     pipe = StableDiffusionXLPipeline.from_single_file(
         str(MODEL), torch_dtype=torch.float16, use_safetensors=True
     )
@@ -149,8 +152,9 @@ def load_controlnet_img2img(
     txt2img: StableDiffusionXLPipeline,
     *,
     kind: str = "openpose",
-    device: str = "mps",
+    device: str | None = None,
 ) -> StableDiffusionXLControlNetImg2ImgPipeline:
+    device = device or get_torch_device_str()
     if kind == "openpose":
         controlnet = ControlNetModel.from_single_file(
             str(OPENPOSE_CN), torch_dtype=torch.float16
@@ -185,6 +189,4 @@ def unload(*pipes: Any) -> None:
             del pipe
         except Exception:  # noqa: BLE001
             pass
-    gc.collect()
-    if torch.backends.mps.is_available():
-        torch.mps.empty_cache()
+    empty_cache()

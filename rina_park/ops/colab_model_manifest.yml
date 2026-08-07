@@ -1,0 +1,182 @@
+# Colab → Google Drive model download manifest
+# Paths are relative to Drive models root (= rina_park/models after symlink).
+# MLX AbstractFramework packs are NOT listed — use cuda upstream repos instead.
+schema_version: 1
+drive_models_subdir: models
+
+tiers:
+  sdxl:
+    description: SDXL stills — RealVis, IP-Adapter, ControlNet, PhotoMaker, upscale
+  wan:
+    description: Wan Diffusers CUDA (TI2V-5B + I2V-A14B) — not MLX 8bit
+  qwen_cuda:
+    description: Qwen / SeedVR2 / Z-Image CUDA upstream (not mlx-gen)
+  all:
+    description: sdxl + wan + qwen_cuda
+
+entries:
+  # ----- tier: sdxl -----
+  - id: realvisxl-v5-fp16
+    tier: sdxl
+    runtime: cuda
+    kind: file
+    repo_id: SG161222/RealVisXL_V5.0
+    revision: ac93e0dda1f6d448cae19bbfab8c5e720a5e48bc
+    filename: RealVisXL_V5.0_fp16.safetensors
+    local_path: checkpoints/RealVisXL_V5.0_fp16.safetensors
+    notes: If filename missing on Hub, try RealVisXL_V5.0.safetensors and rename.
+
+  - id: h94-ip-adapter
+    tier: sdxl
+    runtime: cuda
+    kind: snapshot
+    repo_id: h94/IP-Adapter
+    revision: 018e402774aeeddd60609b4ecdb7e298259dc729
+    local_path: ipadapter/h94-ip-adapter-018e402
+    allow_patterns:
+      - models/image_encoder/**
+      - sdxl_models/ip-adapter-plus-face_sdxl_vit-h.safetensors
+      - README.md
+
+  - id: h94-ip-adapter-faceid
+    tier: sdxl
+    runtime: cuda
+    kind: snapshot
+    repo_id: h94/IP-Adapter-FaceID
+    revision: null
+    local_path: ipadapter/h94-ip-adapter-faceid
+    allow_patterns:
+      - ip-adapter-faceid-plusv2_sdxl.bin
+      - ip-adapter-faceid-plusv2_sdxl_lora.safetensors
+      - README.md
+
+  - id: tencentarc-photomaker
+    tier: sdxl
+    runtime: cuda
+    kind: snapshot
+    repo_id: TencentARC/PhotoMaker
+    revision: f68f8e6309bf213d28d68230abff0ccc92de9f30
+    local_path: photomaker/tencentarc-photomaker-f68f8e6
+    allow_patterns:
+      - photomaker-v1.bin
+      - README.md
+
+  - id: controlnet-depth-sdxl
+    tier: sdxl
+    runtime: cuda
+    kind: snapshot
+    repo_id: diffusers/controlnet-depth-sdxl-1.0
+    revision: 17bb97973f29801224cd66f192c5ffacf82648b4
+    local_path: controlnet/depth
+    allow_patterns:
+      - config.json
+      - diffusion_pytorch_model.fp16.safetensors
+      - "*.json"
+
+  - id: controlnet-canny-sdxl
+    tier: sdxl
+    runtime: cuda
+    kind: snapshot
+    repo_id: diffusers/controlnet-canny-sdxl-1.0
+    revision: null
+    local_path: controlnet/canny
+    allow_patterns:
+      - config.json
+      - diffusion_pytorch_model.fp16.safetensors
+      - "*.json"
+
+  - id: controlnet-openpose-sdxl-thibaud
+    tier: sdxl
+    runtime: cuda
+    kind: file
+    repo_id: thibaud/controlnet-openpose-sdxl-1.0
+    revision: null
+    filename: OpenPoseXL2.safetensors
+    local_path: controlnet/OpenPoseXL2.safetensors
+
+  - id: realesrgan-x2plus
+    tier: sdxl
+    runtime: cuda
+    kind: file
+    repo_id: xinntao/Real-ESRGAN
+    revision: null
+    filename: RealESRGAN_x2plus.pth
+    local_path: upscale/RealESRGAN_x2plus.pth
+    notes: Official release asset; may need HF or GitHub release URL fallback.
+
+  # ----- tier: wan -----
+  - id: wan22-ti2v-5b-diffusers
+    tier: wan
+    runtime: cuda
+    kind: snapshot
+    repo_id: Wan-AI/Wan2.2-TI2V-5B-Diffusers
+    revision: null
+    local_path: wan/Wan2.2-TI2V-5B-Diffusers
+
+  - id: wan22-i2v-a14b-diffusers
+    tier: wan
+    runtime: cuda
+    kind: snapshot
+    repo_id: Wan-AI/Wan2.2-I2V-A14B-Diffusers
+    revision: null
+    local_path: wan/Wan2.2-I2V-A14B-Diffusers
+    notes: CUDA Diffusers upstream. Do NOT use local wan2.2-i2v-a14b-diffusers-8bit (MLX).
+
+  # ----- tier: qwen_cuda -----
+  - id: qwen-image-2512-cuda
+    tier: qwen_cuda
+    runtime: cuda
+    kind: snapshot
+    repo_id: Qwen/Qwen-Image-2512
+    revision: 25468b98e3276ca6700de15c6628e51b7de54a26
+    local_path: qwen_image_2512/Qwen-Qwen-Image-2512
+    notes: Upstream CUDA. Local AbstractFramework mlx-gen q8 is Mac-only.
+
+  - id: qwen-image-edit-2511-cuda
+    tier: qwen_cuda
+    runtime: cuda
+    kind: snapshot
+    repo_id: Qwen/Qwen-Image-Edit-2511
+    revision: 6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9
+    local_path: qwen_image_edit/Qwen-Qwen-Image-Edit-2511
+
+  - id: seedvr2-3b-cuda
+    tier: qwen_cuda
+    runtime: cuda
+    kind: snapshot
+    repo_id: ByteDance-Seed/SeedVR2-3B
+    revision: 37255ff8cccfb01071b87f635a5948ca8d53117c
+    local_path: seedvr2/ByteDance-Seed-SeedVR2-3B
+
+  - id: z-image-cuda
+    tier: qwen_cuda
+    runtime: cuda
+    kind: snapshot
+    repo_id: Tongyi-MAI/Z-Image
+    revision: 04cc4abb7c5069926f75c9bfde9ef43d49423021
+    local_path: z_image/Tongyi-MAI-Z-Image
+
+# Mac rclone only (not downloaded by Colab HF script)
+local_only:
+  - path: loras/rina_park_person_sdxl_lora.safetensors
+    reason: self-trained character LoRA
+  - path: loras/rina_park_person_sdxl_lora-step00000400.safetensors
+    reason: training checkpoint
+  - path: loras/rina_park_person_sdxl_lora-step00000800.safetensors
+    reason: training checkpoint
+  - path: loras/rina_park_person_sdxl_lora-step00001200.safetensors
+    reason: training checkpoint
+  - path: loras/rina_park_person_sdxl_lora-step00001600.safetensors
+    reason: training checkpoint
+  - path: loras/
+    reason: CivitAI LoRAs (skin/film/hands/etc.) — sync whole folder from Mac
+  - path: checkpoints/juggernautXL_ragnarok.safetensors
+    reason: CivitAI
+  - path: checkpoints/cyberrealisticXL_v100.safetensors
+    reason: CivitAI
+  - path: identity/
+    reason: face lock / refs
+  - path: moodboard/
+    reason: refs (gitignored images)
+  - path: private/
+    reason: local-only NSFW / overlays

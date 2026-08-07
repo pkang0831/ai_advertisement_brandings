@@ -4,14 +4,13 @@ out/
 private/
 factory/mature_non_explicit/
 models/
-identity/
 moodboard/
-hyperreal/identity/
 vendor/
 **/__pycache__/
 *.log
 .DS_Store
-*.jpg
+
+# 전역 확장자 차단 (이미지, 모델 파일 등)
 *.jpeg
 *.png
 *.gif
@@ -27,3 +26,10 @@ vendor/
 *.bin
 *.gguf
 !models/CIVITAI_DOWNLOADS.md
+
+# [수정] hyperreal/identity 폴더 내의 코드만 Git 추적 허용
+# (개인 마스터 얼굴 사진인 .jpg나 가중치 .pth는 계속 무시됨)
+rina_park/hyperreal/identity/**/*.pth
+rina_park/hyperreal/identity/**/*.jpg
+!rina_park/hyperreal/identity/
+!rina_park/hyperreal/identity/**/*.py

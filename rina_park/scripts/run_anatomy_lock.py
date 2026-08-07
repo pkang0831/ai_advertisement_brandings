@@ -23,7 +23,10 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
 RINA = ROOT / "rina_park"
+sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(RINA))
+
+from rina_park.runtime_device import empty_cache  # noqa: E402
 
 from hyperreal.anatomy.crop_controlnet import ensure_verified_pose_refs, refine_crops_with_controlnet
 from hyperreal.anatomy.pass2_inpaint import inpaint_regions
@@ -93,12 +96,7 @@ def _save(img: Image.Image, path: Path, meta: dict) -> None:
 
 
 def _mps_cleanup() -> None:
-    import gc
-
-    gc.collect()
-    if torch.backends.mps.is_available():
-        torch.mps.empty_cache()
-        torch.mps.synchronize()
+    empty_cache()
 
 
 def generate_base(pipe, catalog, pose, seed: int, steps: int, cfg: float, lora: float):

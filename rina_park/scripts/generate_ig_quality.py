@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Quality IG pool plog: RealVisXL V5 full + realism/phone LoRAs (MPS)."""
+"""Quality IG pool plog: RealVisXL V5 full + realism/phone LoRAs (CUDA/MPS)."""
 from __future__ import annotations
 
-import gc
 import json
+import sys
 import time
 from pathlib import Path
 
@@ -13,6 +13,9 @@ from diffusers import DPMSolverMultistepScheduler, StableDiffusionXLPipeline
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+from rina_park.runtime_device import empty_cache, require_accelerator  # noqa: E402
+
 RINA = ROOT / "rina_park"
 MODEL = RINA / "models" / "checkpoints" / "RealVisXL_V5.0_fp16.safetensors"
 LORAS = RINA / "models" / "loras"
@@ -34,7 +37,8 @@ NEGATIVE = (
 
 def main() -> None:
     assert MODEL.exists(), MODEL
-    assert torch.backends.mps.is_available()
+    device = require_accelerator()
+    print("device:", device)
 
     t0 = time.time()
     print("Loading", MODEL.name)
@@ -47,7 +51,7 @@ def main() -> None:
         algorithm_type="sde-dpmsolver++",
     )
     pipe.enable_attention_slicing()
-    pipe.to("mps")
+    pipe.to(device)
     pipe.vae.to(dtype=torch.float32)
 
     # Adapter stack — keep weights modest to avoid AI gloss
@@ -110,8 +114,7 @@ def main() -> None:
     OUT.with_suffix(".jpg.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
     print("saved", OUT, f"mean={mean:.1f}", f"elapsed={meta['elapsed_sec']}s")
     del pipe
-    gc.collect()
-    torch.mps.empty_cache()
+    empty_cache()
 
 
 if __name__ == "__main__":
