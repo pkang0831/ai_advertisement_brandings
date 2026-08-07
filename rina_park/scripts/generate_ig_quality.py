@@ -3,9 +3,15 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
 import time
 from pathlib import Path
+
+# Colab: skip TF path in transformers (avoids protobuf/TF version fights)
+os.environ.setdefault("TRANSFORMERS_NO_TF", "1")
+os.environ.setdefault("USE_TF", "0")
+os.environ.setdefault("USE_TORCH", "1")
 
 import numpy as np
 import torch
