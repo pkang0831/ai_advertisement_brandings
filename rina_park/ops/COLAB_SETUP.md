@@ -63,12 +63,21 @@ if git_token:
 
 티어:
 
-- `--tier sdxl` — RealVis, IP-Adapter, ControlNet, PhotoMaker, RealESRGAN (~수십 GB)
-- `--tier wan` — Wan TI2V-5B + I2V-A14B Diffusers (큼)
-- `--tier qwen_cuda` — Qwen / SeedVR2 / Z-Image upstream
-- `--tier all` — 전부
+- `--tier sdxl` — RealVis, IP-Adapter, ControlNet, PhotoMaker, RealESRGAN (~수십 GB) **권장 시작**
+- `--tier wan` / `qwen_cuda` / `all` — 매우 큼 → `--confirm-large` 필수
 
-매니페스트: [`colab_model_manifest.yml`](colab_model_manifest.yml)
+**디스크:** HF 캐시는 기본으로 Drive `rina_park_colab/.hf_home`에 둡니다.  
+`--tier all`을 로컬 캐시로 돌리면 Colab `/content`가 바로 찹니다.
+
+```bash
+# 올바른 예
+python rina_park/scripts/colab_download_hf_models.py --tier sdxl \
+  --models-root /content/drive/MyDrive/rina_park_colab/models \
+  --hf-home /content/drive/MyDrive/rina_park_colab/.hf_home
+
+# 예전에 /content가 가득 찼다면
+rm -rf /root/.cache/huggingface ~/.cache/huggingface
+```
 
 ## 4) Smoke (SDXL 1장)
 
