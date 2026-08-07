@@ -28,16 +28,22 @@ LORAS = RINA / "models" / "loras"
 OUT = RINA / "out" / "ig" / "rina_ig_0001_quality.jpg"
 
 PROMPT = (
-    "devenira_rina_park, beautiful adult Korean-American woman, fair skin, "
-    "long straight black hair, natural facial detail, relaxed closed mouth, "
+    "rina_park_person, devenira_rina_park, strikingly beautiful adult Korean-American woman age 27, "
+    "pretty face, soft glam makeup, clear fair skin, refined facial features, "
+    "large attractive eyes, straight nose, defined jawline, "
+    "lips gently pressed together, mouth fully closed, no teeth showing, "
+    "long straight black hair, soft candid closed-mouth smile, "
     "candid smartphone photo, busy public indoor pool, navy athletic one-piece swimsuit, "
     "friend-taken standing portrait, slight imperfect crop, other swimmers blurred in background, "
-    "flat facility lighting, natural skin texture, pores, realistic photo"
+    "flat facility lighting, natural skin texture, pores, realistic photo, photorealistic"
 )
 NEGATIVE = (
-    "underage, teen, babyface, nude, explicit, plastic skin, beauty filter, "
-    "studio lighting, softbox, model catalog pose, oversmooth skin, CGI, painting, "
-    "illustration, anime, watermark, text, bad hands, deformed face, oversaturated"
+    "underage, teen, babyface, nude, explicit, "
+    "ugly, unattractive, asymmetric face, deformed face, weird face, scary face, "
+    "open mouth, mouth open, teeth, bad teeth, grin, laughing, talking, "
+    "warped lips, melted mouth, extra teeth, overbite, "
+    "plastic skin, beauty filter, oversmooth skin, CGI, painting, illustration, anime, "
+    "studio lighting, softbox, model catalog pose, watermark, text, bad hands, oversaturated"
 )
 
 
@@ -60,16 +66,17 @@ def main() -> None:
     pipe.to(device)
     configure_sdxl_vae(pipe, device)
 
-    # Adapter stack — keep weights modest to avoid AI gloss
+    # Character LoRA first, then light beauty/realism stack (avoid overdrive)
     adapters = []
     weights = []
-    # Prefer SDXL-native LoRAs; ZIT/Instax variants often fail to inject
     lora_specs = [
-        ("skin_realism_sdxl.safetensors", "skin", 0.50),
-        ("RealSkin_xxXL_v1.safetensors", "realskin", 0.60),
-        ("SDXL_FILM_PHOTOGRAPHY_STYLE_V1.safetensors", "film", 0.35),
-        ("iphone_mirror_selfie_v01b.safetensors", "iphone", 0.35),
-        ("add_detail_xl.safetensors", "detail", 0.22),
+        ("rina_park_person_sdxl_lora.safetensors", "person", 0.90),
+        ("KoreanWoman_krea2_2_c1-st5000.safetensors", "korean", 0.35),
+        ("skin_realism_sdxl.safetensors", "skin", 0.40),
+        ("RealSkin_xxXL_v1.safetensors", "realskin", 0.45),
+        ("SDXL_FILM_PHOTOGRAPHY_STYLE_V1.safetensors", "film", 0.30),
+        ("iphone_mirror_selfie_v01b.safetensors", "iphone", 0.28),
+        ("add_detail_xl.safetensors", "detail", 0.20),
     ]
     for fname, name, w in lora_specs:
         path = LORAS / fname
@@ -86,7 +93,7 @@ def main() -> None:
     if adapters:
         pipe.set_adapters(adapters, adapter_weights=weights)
 
-    seed = 20300101
+    seed = 20300117
     gen = torch.Generator(device="cpu").manual_seed(seed)
     print("Generating…")
     image: Image.Image = pipe(
@@ -94,8 +101,8 @@ def main() -> None:
         negative_prompt=NEGATIVE,
         width=832,
         height=1216,
-        num_inference_steps=32,
-        guidance_scale=4.2,
+        num_inference_steps=36,
+        guidance_scale=5.0,
         generator=gen,
     ).images[0]
 
@@ -109,13 +116,13 @@ def main() -> None:
         "output": str(OUT),
         "model": MODEL.name,
         "seed": seed,
-        "steps": 32,
-        "cfg": 4.2,
+        "steps": 36,
+        "cfg": 5.0,
         "loras": dict(zip(adapters, weights)),
         "elapsed_sec": round(time.time() - t0, 1),
         "prompt": PROMPT,
         "negative": NEGATIVE,
-        "note": "quality pass; FaceID skipped (insightface not installed)",
+        "note": "beauty + closed-mouth pass; character LoRA on",
     }
     OUT.with_suffix(".jpg.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
     print("saved", OUT, f"mean={mean:.1f}", f"elapsed={meta['elapsed_sec']}s")
