@@ -20,7 +20,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
-from rina_park.runtime_device import empty_cache, require_accelerator  # noqa: E402
+from rina_park.runtime_device import configure_sdxl_vae, empty_cache, require_accelerator  # noqa: E402
 
 RINA = ROOT / "rina_park"
 MODEL = RINA / "models" / "checkpoints" / "RealVisXL_V5.0_fp16.safetensors"
@@ -58,7 +58,7 @@ def main() -> None:
     )
     pipe.enable_attention_slicing()
     pipe.to(device)
-    pipe.vae.to(dtype=torch.float32)
+    configure_sdxl_vae(pipe, device)
 
     # Adapter stack — keep weights modest to avoid AI gloss
     adapters = []

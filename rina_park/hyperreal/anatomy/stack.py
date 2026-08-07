@@ -18,7 +18,7 @@ from diffusers import (
 
 RINA = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RINA.parent))
-from rina_park.runtime_device import empty_cache, get_torch_device_str, require_accelerator  # noqa: E402
+from rina_park.runtime_device import configure_sdxl_vae, empty_cache, get_torch_device_str, require_accelerator  # noqa: E402
 
 MODEL = RINA / "models" / "checkpoints" / "RealVisXL_V5.0_fp16.safetensors"
 LORA_DIR = RINA / "models" / "loras"

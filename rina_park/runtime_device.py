@@ -38,3 +38,12 @@ def empty_cache() -> None:
     elif getattr(torch.backends, "mps", None) is not None and torch.backends.mps.is_available():
         torch.mps.empty_cache()
         torch.mps.synchronize()
+
+
+def configure_sdxl_vae(pipe, device: str | None = None) -> None:
+    """MPS: fp32 VAE for stability. CUDA: keep fp16 (fp32 VAE + half latents crashes)."""
+    import torch
+
+    device = device or get_torch_device_str()
+    if device == "mps":
+        pipe.vae.to(dtype=torch.float32)
