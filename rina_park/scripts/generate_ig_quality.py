@@ -69,9 +69,9 @@ def main() -> None:
     # Character LoRA first, then light beauty/realism stack (avoid overdrive)
     adapters = []
     weights = []
+    # KoreanWoman_krea* is NOT SDXL-compatible — do not load on this pipe.
     lora_specs = [
         ("rina_park_person_sdxl_lora.safetensors", "person", 0.90),
-        ("KoreanWoman_krea2_2_c1-st5000.safetensors", "korean", 0.35),
         ("skin_realism_sdxl.safetensors", "skin", 0.40),
         ("RealSkin_xxXL_v1.safetensors", "realskin", 0.45),
         ("SDXL_FILM_PHOTOGRAPHY_STYLE_V1.safetensors", "film", 0.30),

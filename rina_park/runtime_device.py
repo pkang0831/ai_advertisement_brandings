@@ -41,9 +41,19 @@ def empty_cache() -> None:
 
 
 def configure_sdxl_vae(pipe, device: str | None = None) -> None:
-    """MPS: fp32 VAE for stability. CUDA: keep fp16 (fp32 VAE + half latents crashes)."""
+    """MPS: fp32 VAE for stability. CUDA: force fp16 + disable force_upcast.
+
+    RealVis/SDXL often loads VAE as fp32 with force_upcast; on Colab that leaves
+    half latents vs float VAE bias → RuntimeError in conv2d during decode.
+    """
     import torch
 
     device = device or get_torch_device_str()
     if device == "mps":
         pipe.vae.to(dtype=torch.float32)
+        return
+    if device == "cuda":
+        pipe.vae.to(dtype=torch.float16)
+        cfg = getattr(pipe.vae, "config", None)
+        if cfg is not None and hasattr(cfg, "force_upcast"):
+            cfg.force_upcast = False
